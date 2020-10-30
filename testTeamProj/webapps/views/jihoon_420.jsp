@@ -9,8 +9,7 @@
 	#good {
 		border : 1px dotted red;
 		background : grey;
-		padding : 10;
-		text-align : center;
+		padding : 10px;
 	}
 </style>
 </head>
