@@ -3,7 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="남김없이 한끼"> 
+    <meta name="keywords" content="다이어트, 식단, 닭가슴살, 요리, 레시피">
+    <meta name="description" content="모두가 사랑하는 장보기, 당일 수확 채소, 과일, 맛집 음식까지 내일 아침 문 앞에서 만나요!">
+    <meta property="og:title" content="남김없이 한끼">
+    <meta property="og:description" content="모두가 사랑하는 장보기, 당일 수확 채소, 과일, 맛집 음식까지 내일 아침 문 앞에서 만나요!">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
 <title>남김 없이 한끼</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">           
