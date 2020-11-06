@@ -29,7 +29,7 @@
 }
 
 #headmenu {
-   font-size: 16px;
+   font-size: 12px;
    padding: 10px;   
 }
 

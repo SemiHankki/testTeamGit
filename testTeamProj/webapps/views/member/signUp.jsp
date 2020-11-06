@@ -56,7 +56,7 @@
             padding-left: 10px;
             border-radius: 5px;
             border: black solid 1px;
-            margin-right: 100px;
+            
         }
 
         label{
@@ -85,9 +85,10 @@
         .overlap1-2{					/* 중복확인 */
             width: 100px;
             height: 35px;
-            border: gray solid 1px;
+            border: white solid 1px;
             border-radius: 5px;
             margin-left: 10px;
+            background-color: white;
         }
 
         /* 여기서부터 이용약관 */
@@ -200,6 +201,7 @@
             <div class="div2-1">
                 <label for="pwd">비밀번호</label>
                 <input type="password" id="pwd" placeholder="비밀번호를 입력해주세요">
+            	<div class="overlap1-2" ></div>
             </div>
             <div class="div2-2">
             <div id=pwdcheck class="divcheck"></div>
@@ -208,6 +210,7 @@
             <div class="div2-1">
                 <label for="pwd2">비밀번호 확인</label>
                 <input type="password" id="pwd2" placeholder="비밀번호를 한번 더 입력해주세요">
+            	<div class="overlap1-2"></div>
             </div>
             <div class="div2-2">
             <div id=pwdcheck2 class="divcheck"></div>    
@@ -216,6 +219,7 @@
             <div class="div2-1">
                 <label for="name">이름</label>
                 <input type="text" id="name" placeholder="이름을 입력해주세요">
+            	<div class="overlap1-2" ></div>
             </div>
             <div class="div2-2">
             <div id="namecheck" class="divcheck"></div>
@@ -234,6 +238,7 @@
             <div class="div2-1">
                 <label for="phone">휴대폰</label>
                 <input type="text" id="phone" maxlength="11" placeholder="숫자만 입력해주세요">
+            	<div class="overlap1-2"></div>
             </div>
             <div class="div2-2" >
             <div id="phonecheck" class="divcheck"></div>
@@ -246,7 +251,7 @@
             <div class="div2-1">
                 <label for="birth">생년월일</label>
                 <input type="text" id="birth" placeholder="YYYY/MM/DD" style="text-align: center; ">
-                
+                <div class="overlap1-2"></div>
             </div>
             <div class="div2-2">
             <div id="birthcheck" class="divcheck"></div>
