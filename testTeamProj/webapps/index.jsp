@@ -8,17 +8,20 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">           
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
 
 <style>
 
-@font-face {
-font-family:NanumSquare_acB;
+/*@font-face {
+font-family:"NanumSquare_acB";
 /*src: url(./images/NanumGothic.eot);*/
-src: local("나눔 스퀘어"), url(resorces/fonts/NanumSquare_acB.ttf) format("ttf");
+/*src: local("나눔 스퀘어"), url(resources/fonts/NanumSquare_acB.ttf) format("ttf");
 }
+*/
 
-p, h {
-	font-family: NanumDothic-Bold;
+body, h3, h4, p {
+	font-family: 'Noto Sans KR', sans-serif;
 	}
 
 header {
@@ -44,21 +47,42 @@ header {
 }
 
 #new_p {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 #s_button {
      display: block; margin: 0px auto; 
 }
  
+.thumbnail {border: none;} 
+.thumbnail>img {border-radius: 10px;}
+
+/*top_button*/
+#myBtn {
+  position: right;/* Fixed/sticky position */
+  bottom: 50px; /* Place the button at the bottom of the page */
+  right: 50px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  background-color: white;
+  position: fixed;
+}
+
+ 
 </style>
 </head>
 <body>
+    <!-- Header -->
 	<header>
 		<%@ include file="views/common/header.jsp"%>
 	</header>
 
+    <!-- Advertisement -->
 	<div class="container" id="advertisement">
 		<div id="carousel-example-generic" class="carousel slide"
 			data-ride="carousel">
@@ -101,7 +125,7 @@ header {
 			<div class="carousel-caption"></div>
 		</div>
 	</div>
-	
+	<!-- Advertisement End-->
 	
 	<!-- New Products -->
 	<div class="container">
@@ -138,12 +162,12 @@ header {
 			</div>
 		</div>
 	</div>
+	<!-- New Products End-->
 	
 	<div class="container">
 		<br /><br /><br /><br /><br />
 	</div>	
-	
-	
+		
 	<!-- Best Seller -->
 		<div class="container" id="bestSeller">
 		<div id="carousel-example-generic2" class="carousel slide"
@@ -161,22 +185,22 @@ header {
 				<div class="item active">
 					<img src="<%=request.getContextPath()%>/resources/images/meat.jpg">
 					<div class="carousel-caption">
-					   <p>이 달의 판매량 1위</p>
-                       <h4><a href="#"></a>베스트 상품</h4>
+					   <p style="font-size: 25px;">이 달의 판매량 1위</p>
+                       <h4 style="font-size: 30px;"><a href="#"></a>베스트 상품</h4>
 					</div>
 				</div>
 				<div class="item">
 					<img src="<%=request.getContextPath()%>/resources/images/chicken2.jpg">
 					<div class="carousel-caption">
-					   <p>이 달의 판매량 2위</p>
-                       <h4><a href="#"></a>베스트 상품</h4>
+					   <p style="font-size: 25px;">이 달의 판매량 2위</p>
+                       <h4 style="font-size: 30px;"><a href="#"></a>베스트 상품</h4>
 					</div>
 				</div>
 				<div class="item">
 					<img src="<%=request.getContextPath()%>/resources/images/burger.jpg">
 					<div class="carousel-caption">
-					  <p>이 달의 판매량 3위</p>
-                      <h4><a href="#"></a>베스트 상품</h4>
+					  <p style="font-size: 25px;">이 달의 판매량 3위</p>
+                      <h4 style="font-size: 30px;"><a href="#"></a>베스트 상품</h4>
 					</div>
 				</div>
 			</div>
@@ -196,7 +220,7 @@ header {
 			<div class="carousel-caption"></div>
 		</div>
 	</div>
-	
+	<!-- Best Seller End-->
 	
 	<div class="container">
 		<br /><br /><br /><br /><br />
@@ -208,35 +232,34 @@ header {
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="c_box_item">
-                                <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/1.png" width="70px" height="70px"></p>
+                                <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/step_1.png" width="70px" height="70px"></p>
                                 <a href="#"><h4 align="center">식재료 담기</h4></a>
-                                <p align="center">선호하는 식재료 장바구니에 담기 <br> (그린등급 식재료 구매시 할인 적용)</p>
+                                <p style="font-size: 15px;" align="center">선호하는 식재료 장바구니에 담기 <br> (그린등급 식재료 구매시 할인 적용)</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="c_box_item">
-                                <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/2.png" width="70px" height="70px"></p>
+                                <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/step_2.png" width="70px" height="70px"></p>
                                 <a href="#"><h4 align="center">최소한으로 배송하기</h4></a>
-                                <p align="center">친환경 포장이 가능한 그린배송 선택하기 <br> (최소한의 포장과 배송가방 재활용) </p>
+                                <p style="font-size: 15px;" align="center">친환경 포장이 가능한 그린배송 선택하기 <br> (최소한의 포장과 배송가방 재활용) </p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="c_box_item">
-                                <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/3.png" width="70px" height="70px"></p>
+                                <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/step_3.png" width="70px" height="70px"></p>
                                 <a href="#"><h4 align="center">나도 친환경 소비자!</h4></a>
-                                <p align="center">1-2주 동안 사용할 식재료를 한 번에 구매, <br>절약형 정기배송으로 남김없이 생활하기</p>
+                                <p style="font-size: 15px;" align="center">1-2주 동안 사용할 식재료를 한 번에 구매, <br>절약형 정기배송으로 남김없이 생활하기</p>
                             </div>
                         </div>
                     </div>
                 </div>
                </div>
-	   
+	         <!-- Three steps End-->
 	
 	<div class="container">
 		<br /><br /><br /><br /><br />
 	</div>	
-	
-	
+
 	<!-- four pictures -->
 	<div class="container">
 	  <div>
@@ -273,13 +296,45 @@ header {
 			</div>
 		</div>
 	</div>
+	<!-- four pictures End-->
+	
+	<!-- top_button -->
+	  <div class="myBtn">
+	   <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="<%=request.getContextPath()%>/resources/images/top_arrow.png" width="70px" height="70px"/></button>
+	  </div>
+	 <!-- top_button End-->
 	
 	<div class="container">
 		<br /><br /><br /><br /><br />
 	</div>	
 	
+	<!-- Footer -->
 	<footer>
 		<%@ include file="views/common/footer.jsp"%>
 	</footer>
+	
+	<script>
+	
+	<!--top_button-->
+	// Get the button:
+	mybutton = document.getElementById("myBtn");
+
+	// When the user scrolls down 100px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	    mybutton.style.display = "block";
+	  } else {
+	    mybutton.style.display = "none";
+	  }
+	}
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	  document.body.scrollTop = 0; // For Safari
+	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+	</script>
+	
 </body>
 </html>
