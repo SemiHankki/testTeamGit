@@ -178,7 +178,7 @@ thead > tr > th{
 			</tr>
 			<tr>
 				<td id="row2">
-					<a href="#">레시피</a>
+					<a href="<%= request.getContextPath()%>/views/recipe/recipeList.jsp">레시피</a>
 				</td>
 			</tr>
 			<tr>

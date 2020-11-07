@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 조회</title>
+<title>알뜰 상품</title>
 
 <style>
 header {
@@ -51,46 +51,8 @@ header {
 	color: black;
 }
 
-/* Dropdown Button */
-#dropdown_area{
-	text-align: right;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  float: right;
-  margin-top: 0px;
-  margin-right: 20px;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 14px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-}
-
-
-#dropdown_area{
-	text-align: right;
-}
-
-.dropdown-content a:hover, dropdown-menu a:hover {background-color: rgb(248,240,211);}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: white;}
+/*more_btn*/
+#more_btn {float: right; margin-right: 20px; background-color: white; border: none; font-size: 20px;}
 
 </style>
 </head>
@@ -134,33 +96,16 @@ header {
 
 	<div class="row">
 		<div class="col-xs-12" id="header_text">
-			<h1>상품 검색</h1>
+			<h1>남김없이 한끼 알뜰 식재료</h1>
 			<br />
-			<h4>남김없이 한끼의 상품을 검색해 보세요.</h4>
 		</div>
 
 		<div class="col-xs-10" id="space_area">
 			<br />
 		</div>
-
-		<div class="col-xs-10"><br /></div>
 		
-		 <!-- sidebar dropdown -->
-         	<div class="dropdown">
-  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
-    				추천순 <span class="caret"></span>
-  				</button>
-  			
-  				<div class="dropdown-content" role="menu" aria-labelledby="dropdownMenu1">
-    				<a role="menuitem" href="#">인기순</a>
-    				<a role="menuitem" href="#">신상품순</a>
-    				<a role="menuitem" href="#">낮은 가격순</a>
-    				<a role="menuitem" href="#">높은 가격순</a>
-  				</div>
-			</div>
-        <!-- End sidebar dropdown -->
-        
-		<div class="col-xs-12" id="space_area">
+		<div class="col-xs-12" id="header_text">
+			<h3 style="float: left; margin-left: 5px;">과일류</h3>
 			<br />
 		</div>
 
@@ -171,7 +116,6 @@ header {
 				</a>
 				<div class="caption">
 					<h3>test caption1</h3>
-					<p>test comment1</p>
 				</div>
 			</div>
 			<div class="col-xs-4">
@@ -180,7 +124,6 @@ header {
 				</a>
 				<div class="caption">
 					<h3>test caption2</h3>
-					<p>test comment2</p>
 				</div>
 			</div>
 			<div class="col-xs-4">
@@ -189,13 +132,23 @@ header {
 				</a>
 				<div class="caption">
 					<h3>test caption3</h3>
-					<p>test comment3</p>
 				</div>
 			</div>
+			
+			<a href="#"><button type="button" id="more_btn">더보기></button></a>
 
 			<div class="col-xs-12" id="space_area">
-				<br />
+			  <hr style="border-top: 1px solid black;"/>
 			</div>
+			
+			<div class="col-xs-12" id="space_area">
+			  <br>
+			</div>
+			
+			<div class="col-xs-12" id="header_text">
+			 <h3 style="float: left; margin-left: 5px;">채소류</h3>
+			 <br />
+		    </div>
 
 			<div class="col-xs-4">
 				<a href="#" class="thumbnail"> <img
@@ -203,7 +156,6 @@ header {
 				</a>
 				<div class="caption">
 					<h3>test caption4</h3>
-					<p>test comment4</p>
 				</div>
 			</div>
 			<div class="col-xs-4">
@@ -212,7 +164,6 @@ header {
 				</a>
 				<div class="caption">
 					<h3>test caption5</h3>
-					<p>test comment5</p>
 				</div>
 			</div>
 			<div class="col-xs-4">
@@ -221,9 +172,91 @@ header {
 				</a>
 				<div class="caption">
 					<h3>test caption6</h3>
-					<p>test comment6</p>
 				</div>
 			</div>
+			
+			<a href="#"><button type="button" id="more_btn">더보기></button></a>
+			
+			<div class="col-xs-12" id="space_area">
+			  <hr style="border-top: 1px solid black;"/>
+			</div>
+			
+			<div class="col-xs-12" id="space_area">
+			  <br>
+			</div>
+			
+			<div class="col-xs-12" id="header_text">
+			 <h3 style="float: left; margin-left: 5px;">견과류</h3>
+			 <br />
+		    </div>
+
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_04.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption4</h3>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_05.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption5</h3>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_06.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption6</h3>
+				</div>
+			</div>
+			
+			<a href="#"><button type="button" id="more_btn">더보기></button></a>
+			
+			<div class="col-xs-12" id="space_area">
+			  <hr style="border-top: 1px solid black;"/>
+			</div>
+			
+			<div class="col-xs-12" id="space_area">
+			  <br>
+			</div>
+			
+			<div class="col-xs-12" id="header_text">
+			 <h3 style="float: left; margin-left: 5px;">버섯류</h3>
+			 <br />
+		    </div>
+
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_04.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption4</h3>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_05.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption5</h3>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_06.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption6</h3>
+				</div>
+			</div>
+			
+			<a href="#"><button type="button" id="more_btn">더보기></button></a>
+			
 		</div>
 	</div>
 	<br />

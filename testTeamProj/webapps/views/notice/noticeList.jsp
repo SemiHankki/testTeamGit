@@ -18,9 +18,9 @@
 	color: black;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5px;
+	margin-top: auto;
 	padding: 40px 5px;
-	padding-top: 5px;
+	padding-top: 230px;
 	/*border:1px solid black;*/
 }
 

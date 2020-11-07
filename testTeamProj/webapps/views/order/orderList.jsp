@@ -10,7 +10,7 @@
 <style>
 
 .rowarea {
-  padding-top:30px;
+  padding-top:250px;
   padding-right: 120px;
   padding-left: 120px;    
 }
@@ -60,6 +60,8 @@
   border-radius: 5px;
   height: 20px; 
   text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .button_t2 {
@@ -205,6 +207,8 @@ ul.sub li:hover a {
 li strong {
     float: right;
 }
+
+
 
 </style>
 

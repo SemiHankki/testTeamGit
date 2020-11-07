@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 조회</title>
+<title>신상품</title>
 
 <style>
 header {
@@ -134,9 +134,8 @@ header {
 
 	<div class="row">
 		<div class="col-xs-12" id="header_text">
-			<h1>상품 검색</h1>
+			<h1>남김없이 한끼 신상품</h1>
 			<br />
-			<h4>남김없이 한끼의 상품을 검색해 보세요.</h4>
 		</div>
 
 		<div class="col-xs-10" id="space_area">

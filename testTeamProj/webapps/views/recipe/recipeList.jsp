@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 조회</title>
+<title>레시피 목록 페이지</title>
 
 <style>
 header {
@@ -24,10 +24,11 @@ header {
 }
 
 /*side bar*/
-#aside_table{
-	width: 110px;
-}
+#aside {padding-right: 20px;}
 
+#aside_table{
+	width: 110px;	
+}
 
 #aside > table {
 	text-align: center;
@@ -92,6 +93,8 @@ header {
 
 .dropdown:hover .dropbtn {background-color: white;}
 
+#r_picture {border-radius: 8px;}
+
 </style>
 </head>
 <body>
@@ -99,15 +102,13 @@ header {
 		<%@ include file="../common/header.jsp"%>
 	</header>
 	
-	<br />	
+	<br />
 	<!-- right-side fixed bar -->
 	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
 		<a href="#">
 			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
 		</a>
-		
-		<!-- <div class="col-xs-12"><br /> <br /></div>-->
-		
+
 		<table class="table table-hover" id="aside_table">
 		<tbody>
 			<tr>
@@ -130,13 +131,11 @@ header {
 	</div>
 	<!-- right-side fixed bar End-->
 
-	<div class="container" id="product_search">
+	<div class="container" id="recipe">
 
 	<div class="row">
 		<div class="col-xs-12" id="header_text">
-			<h1>상품 검색</h1>
-			<br />
-			<h4>남김없이 한끼의 상품을 검색해 보세요.</h4>
+			<h1>남김없이 한끼의 레시피</h1>
 		</div>
 
 		<div class="col-xs-10" id="space_area">
@@ -152,10 +151,9 @@ header {
   				</button>
   			
   				<div class="dropdown-content" role="menu" aria-labelledby="dropdownMenu1">
-    				<a role="menuitem" href="#">인기순</a>
-    				<a role="menuitem" href="#">신상품순</a>
-    				<a role="menuitem" href="#">낮은 가격순</a>
-    				<a role="menuitem" href="#">높은 가격순</a>
+    				<a role="menuitem" href="#">조회순</a>
+    				<a role="menuitem" href="#">최근순</a>
+    				<a role="menuitem" href="#">오래된순</a>
   				</div>
 			</div>
         <!-- End sidebar dropdown -->
@@ -164,64 +162,59 @@ header {
 			<br />
 		</div>
 
-			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"
-				target="_blank">
-				 <img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
+			<div class="col-xs-6">
+				<a href="#" class="thumbnail" target="_blank">
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_11_.PNG" />
 				</a>
-				<div class="caption">
-					<h3>test caption1</h3>
-					<p>test comment1</p>
+				<div class="caption" style="text-align: center;">
+					<h3>치즈 조개구이</h3>
+					<p style="display: inline">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/shellfish.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/cheese.png" width="30px" height="30px">
+					</p>
 				</div>
 			</div>
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_02.png" />
+			<div class="col-xs-6">
+				<a href="#" class="thumbnail"> 
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_22.PNG" />
 				</a>
-				<div class="caption">
-					<h3>test caption2</h3>
-					<p>test comment2</p>
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_03.png" />
-				</a>
-				<div class="caption">
-					<h3>test caption3</h3>
-					<p>test comment3</p>
+				<div class="caption" style="text-align: center;">
+					<h3>레몬향 연어덮밥</h3>
+					<p style="display: inline">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/salmon1.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/lemon.png" width="30px" height="30px">
+					</p>
 				</div>
 			</div>
 
 			<div class="col-xs-12" id="space_area">
 				<br />
 			</div>
-
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_04.png" />
+             <br>
+			<div class="col-xs-6">
+				<a href="#" class="thumbnail"> 
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_33_.png" />
 				</a>
-				<div class="caption">
-					<h3>test caption4</h3>
-					<p>test comment4</p>
+				<div class="caption" style="text-align: center;">
+					<h3>호밤 쉐이크</h3>
+					<p style="display: inline">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/milk.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/pumpkin.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/acorn.png" width="30px" height="30px">
+					</p>
 				</div>
 			</div>
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_05.png" />
+			<div class="col-xs-6">
+			    <a href="#" class="thumbnail"> 
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_44.PNG" />
 				</a>
-				<div class="caption">
-					<h3>test caption5</h3>
-					<p>test comment5</p>
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_06.png" />
-				</a>
-				<div class="caption">
-					<h3>test caption6</h3>
-					<p>test comment6</p>
+				<div class="caption" style="text-align: center;">
+					<h3>어니언 치킨과 고구마칩</h3>
+					<p style="display: inline">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/chicken3.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/onion.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/potato.png" width="30px" height="30px">
+					</p>
 				</div>
 			</div>
 		</div>

@@ -25,7 +25,7 @@ body, h3, h4, p {
 	}
 
 header {
-	height: 300px;
+	height: 230px;
 }
 
 #advertisement {
@@ -73,6 +73,39 @@ header {
   position: fixed;
 }
 
+/*side bar*/
+#aside_table{
+	width: 110px;
+}
+
+
+#aside > table {
+	text-align: center;
+}
+
+#aside_table > tbody > tr >td{
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+
+#row1{
+	border-top: 2px solid black;
+}
+
+#row3{
+	border-bottom: 2px solid black;
+}
+
+#aside_table > tbody > tr > td > a{
+	text-decoration: none;
+	color: black;
+}
+
+#aside_table > tbody > tr > td:hover{
+	background-color: rgb(248,240,211);
+	color: black;
+}
+
  
 </style>
 </head>
@@ -81,6 +114,35 @@ header {
 	<header>
 		<%@ include file="views/common/header.jsp"%>
 	</header>
+	
+	<br />	
+	<!-- right-side fixed bar -->
+	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
+		<a href="#">
+			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
+		</a>
+		
+		<table class="table table-hover" id="aside_table">
+		<tbody>
+			<tr>
+				<td id="row1">
+					<a href="#">등급별 혜택</a>
+				</td>
+			</tr>
+			<tr>
+				<td id="row2">
+					<a href="<%= request.getContextPath()%>/views/recipe/recipeList.jsp">레시피</a>
+				</td>
+			</tr>
+			<tr>
+				<td id="row3">
+					<a href="#">베스트 후기</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- right-side fixed bar End-->
 
     <!-- Advertisement -->
 	<div class="container" id="advertisement">

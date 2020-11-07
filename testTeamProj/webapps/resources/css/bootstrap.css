@@ -6,7 +6,7 @@
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -1089,13 +1089,13 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: black;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline;
+  color: rgb(46,143,88);
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -4893,7 +4893,7 @@ a.badge:focus {
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;
-  border: 1px solid #ddd;
+  /*border: 1px solid #ddd;*/
   border-radius: 4px;
   -webkit-transition: border .2s ease-in-out;
        -o-transition: border .2s ease-in-out;

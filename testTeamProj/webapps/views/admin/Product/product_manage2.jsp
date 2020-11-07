@@ -11,11 +11,11 @@
 	height: 300px;
 }
 
-#space_area {
+.space_area {
 	height: 30px;
 }
 
-#space_area2{
+.space_area2 {
 	height: 70px;
 }
 
@@ -23,27 +23,28 @@
 	text-align: center;
 }
 
-#admin_menu_area{
+#admin_menu_area {
 	top: 100px;
-	left: 10px;
 }
 
-#admin_menu_area > table{
+#admin_menu_area>table {
 	width: 180px;
 	border: 2px solid black;
 }
 
-#title_content, #product_select_area{
-	left: 80px;
+.col-xs-9 {
+	left: 90px;
 }
 
-#select_product_option{
-	margin-top: 33px;
+.select_product_option {
+	height: 63px;
+	line-height: 100px;
+	font-size: 16px;
 }
 
-#select_product_search{
-	margin-top: 33px;
-	text-align: right;
+#select_product_search {
+	top: 28px;
+	left: 15px;
 }
 
 #button_area{
@@ -51,7 +52,7 @@
 }
 
 .button>button{
-	width: 100px;
+	width: 120px;
 }
 </style>
 
@@ -62,8 +63,8 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12">
-			<div class="col-xs-1 col-xs-offset-1" id="admin_menu_area">
+		<div class="container">
+			<div class="col-xs-2" id="admin_menu_area">
 				<table class="table table-hover" id="admin_menu">
 					<tr>
 						<td>회원 등급 관리</td>
@@ -93,34 +94,37 @@
 			</div>
 
 
-			<div class="col-xs-7" id="title_content">
-				<div class="col-xs-4" id="title">
+			<div class="col-xs-9" id="title_content">
+				<div class="col-xs-3" id="title">
 					<h2>상품 관리</h2>
 				</div>
-				<div class="col-xs-2" id="select_product_option">
+				<div class="select_product_option col-xs-2">
 					<input type="checkbox" id="product_num"
-						style="width: 20px; height: 16px;" /> &nbsp; <label
+						style="width: 14px; height: 14px;" /> &nbsp; <label
 						for="product_num"> 상품 번호</label>
 				</div>
 
-				<div class="col-xs-2" id="select_product_option">
+				<div class="select_product_option col-xs-2">
 					<input type="checkbox" id="product_name"
-						style="width: 20px; height: 16px;" /> &nbsp; <label
+						style="width: 14px; height: 14px;" /> &nbsp; <label
 						for="product_name"> 상품 이름</label>
 				</div>
 
-				<div class="col-xs-4" id="select_product_search">
-					<form>
-						<input type="text" placeholder="Search" style="height: 30px; width: 200px;">
-						<button type="submit" style="height: 30px">Go!</button>
-					</form>
+				<div class="col-xs-5" id="select_product_search">
+					<div class="input-group">
+						<input type="text" class="form-control"
+							placeholder="Search for..."> <span
+							class="input-group-btn">
+							<button class="btn btn-default" type="button">Go!</button>
+						</span>
+					</div>
 				</div>
 			</div>
 
 
-			<div class="col-xs-7" id="product_select_area">
+			<div class="col-xs-9" id="product_select_area">
 
-				<div class="col-xs-12" id="space_area"></div>
+				<div class="space_area col-xs-12"></div>
 				<div class="col-xs-4">
 					<a
 						href="<%=request.getContextPath()%>/views/product/product_detail.jsp"
@@ -130,8 +134,9 @@
 					<div class="caption">
 						<h3>test caption1</h3>
 						<p>test comment1</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
+						<input type="checkbox" id="product_no1"
+							style="width: 20px; height: 16px;" /> &nbsp; <label
+							for="product_no1"> 상품 선택</label>
 					</div>
 				</div>
 				<div class="col-xs-4">
@@ -141,8 +146,9 @@
 					<div class="caption">
 						<h3>test caption2</h3>
 						<p>test comment2</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
+						<input type="checkbox" id="product_no2"
+							style="width: 20px; height: 16px;" /> &nbsp; <label
+							for="product_no2"> 상품 선택</label>
 					</div>
 				</div>
 				<div class="col-xs-4">
@@ -152,12 +158,13 @@
 					<div class="caption">
 						<h3>test caption3</h3>
 						<p>test comment3</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
+						<input type="checkbox" id="product_no3"
+							style="width: 20px; height: 16px;" /> &nbsp; <label
+							for="product_no3"> 상품 선택</label>
 					</div>
 				</div>
 
-				<div class="col-xs-12" id="space_area2"></div>
+				<div class="space_area2 col-xs-12"></div>
 
 				<div class="col-xs-4">
 					<a href="#" class="thumbnail"> <img
@@ -166,8 +173,9 @@
 					<div class="caption">
 						<h3>test caption4</h3>
 						<p>test comment4</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
+						<input type="checkbox" id="product_no4"
+							style="width: 20px; height: 16px;" /> &nbsp; <label
+							for="product_no4"> 상품 선택</label>
 					</div>
 				</div>
 				<div class="col-xs-4">
@@ -177,8 +185,9 @@
 					<div class="caption">
 						<h3>test caption5</h3>
 						<p>test comment5</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
+						<input type="checkbox" id="product_no5"
+							style="width: 20px; height: 16px;" /> &nbsp; <label
+							for="product_no5"> 상품 선택</label>
 					</div>
 				</div>
 				<div class="col-xs-4">
@@ -188,28 +197,29 @@
 					<div class="caption">
 						<h3>test caption6</h3>
 						<p>test comment6</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
+						<input type="checkbox" id="product_no6"
+							style="width: 20px; height: 16px;" /> &nbsp; <label
+							for="product_no6"> 상품 선택</label>
 					</div>
 				</div>
 
 				<div class="space_area col-xs-12"><br /></div>
 
-				<div class="col-xs-12" id="button_area" >
-					<div class="button col-xs-2" style="width: auto;">
+				<div class="col-xs-12" id="button_area">
+					<div class="button col-xs-2 col-xs-offset-6">
 						<button type="button" class="btn btn-success btn-lg">등록</button>
 					</div>
-					<div class="button col-xs-2" style="width: auto;">
+					<div class="button col-xs-2">
 						<button type="button" class="btn btn-warning btn-lg">수정</button>
 					</div>
-					<div class="button col-xs-2" style="width: auto;">
+					<div class="button col-xs-2">
 						<button type="button" class="btn btn-danger btn-lg">삭제</button>
 					</div>
 				</div>
-				
-				<div class="space_area col-xs-12" style="padding-bottom:10px; padding-top:10px;"></div>
 
-				<div class="col-xs-12" id="paging_area">
+				<div class="space_area col-xs-12"></div>
+
+				<div class="col-xs-9" id="paging_area">
 					<nav id="paging">
 						<ul class="pagination">
 							<li><a href="#" aria-label="Previous"> <span
@@ -225,15 +235,12 @@
 							</a></li>
 						</ul>
 					</nav>
-				</div><br>
+				</div>
 			</div>
 		</div>
-	<div class="col-xs-12" id="space_area"></div>
+		<div class="space_area col-xs-12" ></div>
 	</div>
-
-	<footer> 
-	  <%@ include file="/views/common/footer.jsp"%>
-	</footer>
+	<%@ include file="/views/common/footer.jsp"%>
 
 </body>
 </html>
