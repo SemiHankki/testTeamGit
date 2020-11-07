@@ -22,7 +22,6 @@
 
 
 <style>
-
 #header_area {
 	height: 230px;
 	z-index: 999999;
@@ -39,30 +38,54 @@
 	text-align: center;
 }
 
-#nav_area {
-	text-align: center;
-	font-size: 25px;
-}
-
 #nav_container {
-	height: 60px;
-	border: 2px solid black;
-	line-height: 60px;
+	height: 58px;
+	line-height: 58px;
 }
 
-.nav-item{
+#dropdown_category {
+	height: 58px;
 	width: 160px;
-	border: 1px solid red;
+	font-size: 20px;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
 }
 
-.search_area{
+.nav-item {
+	height: 58px;
+	width: 160px;
+	font-size: 20px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.search_area {
+	height: 58px;
 	width: 330px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
 }
 
-#category{
-	list-style: none;
+.nav-item > a{
+	text-decoration: none;
+	color: black;
 }
 
+#dropdown_category > a{
+	text-decoration: none;
+	color: black;
+}
+
+.dropdown-menu {
+	font-size: 16px;
+}
+
+.dropdown-menu > li:hover {
+	background: #CCEEFF;
+}
 </style>
 </head>
 
@@ -71,6 +94,7 @@
 <body>
 	<div class="col-xs-12" data-spy="affix" id="header_area">
 		<div class="row">
+
 			<div class="col-xs-2 col-xs-offset-5" id="logo_area">
 				<a href="<%=request.getContextPath()%>"> <img
 					src="<%=request.getContextPath()%>/resources/images/hankki_logo.jpg">
@@ -88,37 +112,66 @@
 				</ul>
 			</div>
 
-			<div class="col-xs-12" id="nav_area">
-				<div class="container" id="nav_container">
+			<div class="col-xs-12" id="nav_area"></div>
 
-					<div class="nav-item col-xs-2">
-						<a href="#">카테고리</a>
-					</div>
-					<div class="nav-item col-xs-2">
-						<a href="#">신상품</a>
-					</div>
-					<div class="nav-item col-xs-2">
-						<a href="#">베스트</a>
-					</div>
-					<div class="nav-item col-xs-2">
-						<a href="#">알뜰 쇼핑</a>
-					</div>
-					<div class="nav-item col-xs-2">
-						<a href="#">이벤트</a>
-					</div>
-					<div class="search_area col-xs-2">
-						<div class="input-group">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">Go!</button>
-							</span> <input type="text" class="form-control"
-								placeholder="Search for..." style="margin-top: 13px;">
-						</div>
-					</div>
-					<div class="col-xs-5" id="dropdown_mewnu" style="border:1px solid red;">
-						<div class="col-xs-6" style="border: 1px solid green;"></div>
-						<br />
+			<div class="container" id="nav_container">
+
+				<div class="col-xs-2" id="dropdown_category">
+					<a class="dropdown-toggle" data-toggle="dropdown">카테고리</a>
+
+					<ul class="dropdown-menu" role="menu"> 
+						<li>&nbsp;&nbsp;&nbsp;Link 2</li>
+						<li>&nbsp;&nbsp;&nbsp;Link 3</li>
+					</ul>
+				</div>
+
+				<script>
+					$(document).ready(function() {
+						$('.dropdown-toggle').mouseover(function() {
+							$('.dropdown-menu').show();
+						})
+
+						$('.dropdown-toggle').mouseout(function() {
+							t = setTimeout(function() {
+								$('.dropdown-menu').hide();
+							}, 100);
+
+							$('.dropdown-menu').on('mouseenter', function() {
+								$('.dropdown-menu').show();
+								clearTimeout(t);
+							}).on('mouseleave', function() {
+								$('.dropdown-menu').hide();
+							})
+						})
+					})
+				</script>
+
+
+
+
+				<div class="nav-item col-xs-2">
+					<a href="#">신상품</a>
+				</div>
+				<div class="nav-item col-xs-2">
+					<a href="#">베스트</a>
+				</div>
+				<div class="nav-item col-xs-2">
+					<a href="#">알뜰 쇼핑</a>
+				</div>
+				<div class="nav-item col-xs-2">
+					<a href="#">이벤트</a>
+				</div>
+				<div class="search_area col-xs-2">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"
+								style="margin-top: 2px;">Go!</button>
+						</span> <input type="text" class="form-control"
+							placeholder="Search for..." style="margin-top: 13px;">
+
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
