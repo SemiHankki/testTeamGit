@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>광고 수정</title>
+<title>이벤트 수정</title>
 <style>
 	#title {
 		font-size : 30px;
@@ -41,7 +41,7 @@
 	<hr />
 	<br><br>
 	<div class="row">
-		<div class="col-md-7 col-md-offset-3" id="title" style="background : white">광고 수정</div>
+		<div class="col-md-7 col-md-offset-3" id="title" style="background : white">이벤트 수정</div>
 	</div>
 	<div class="row">
 		<div class="col-md-7 col-md-offset-3" id="content">
@@ -54,22 +54,18 @@
 			<form action="#">
 				<table>
 					<tr>
-						<td>광고 제목 : </td>
+						<td>이벤트 제목 : </td>
 						<td><input type="text" id="AD_title" placeholder="제목을 입력해주세요." /></td>
 					</tr>
 					<tr>
-						<td>사이트 링크 : </td>
-						<td><input type="text" id="AD_link" placeholder="사이트 링크를 입력해주세요." /></td>
-					</tr>
-					<tr>
-						<td>광고 설명 : </td>
+						<td>이벤트 설명 : </td>
 						<td><textarea id="AD_content" cols="60" rows="3" style="resize: none;" placeholder="광고 설명을 입력해주세요."></textarea></td>
 					</tr>
 				</table>
 				<br><br>
 				<div id="result">
-					<button class="btn btn-success btn-sm"  onclick="location.href='AD_Manage.jsp'">수정하기</button> &nbsp;
-					<button class="btn btn-danger btn-sm"  onclick="location.href='AD_Manage.jsp'">취소하기</button>
+					<button class="btn btn-success btn-sm"  onclick="location.href='EventManage.jsp'">수정하기</button> &nbsp;
+					<button class="btn btn-danger btn-sm"  onclick="location.href='EventManage.jsp'">취소하기</button>
 				</div>
 			</form>
 		</div>

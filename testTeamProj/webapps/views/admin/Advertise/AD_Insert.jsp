@@ -6,18 +6,8 @@
 <meta charset="UTF-8">
 <title>광고 등록</title>
 <style>
-
-    section {
-        position : absolute;
-        margin : 5% 18%;
-        width : 65%;
-        height : auto;
-        padding-top: 50px;
-    }
-
 	#title {
-		font-size : 25px;
-		text-align: left;
+		font-size : 30px;
 	}
 	
 	#content img {
@@ -26,7 +16,7 @@
 	}
 	
 	#result {
-		text-align: center;
+		text-align : center;
 	}
 	
 	#content>input {
@@ -37,40 +27,32 @@
 		line-height : 20px;
 	}
 	
-	table {
-       border-collapse: separate;
-       border-spacing: 0 10px;
-    }
+	td input {
+		width : 455px;
+	}
 	
-	td input {width : 455px;}
-	
-	td {line-height : 1.5em;}
-
-	
+	td {
+		line-height : 1.5em;
+	}
 </style>
 </head>
 <body>
 	<%@ include file="/views/common/adminMenu.jsp" %>
-	
-	<section>
-	<hr>
+	<hr />
+	<br><br>
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8" id="title" style="background: white;">광고 등록</div>
+		<div class="col-md-7 col-md-offset-3" id="title" style="background : white">광고 등록</div>
 	</div>
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8" id="content">
-			<img src="/Semi/resources/images/sample_images_01.png" >
+		<div class="col-md-7 col-md-offset-3" id="content">
+			<img src="/<%=request.getContextPath()%>/resources/images/sample_images_01.png" >
 		</div>
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-7">
+		<div class="col-md-5 col-md-offset-4">
 			<form action="#">
-				<table >
-				<br>
+				<table>
 					<tr>
 						<td>광고 제목 : </td>
 						<td><input type="text" id="AD_title" placeholder="제목을 입력해주세요." /></td>
@@ -79,7 +61,6 @@
 						<td>사이트 링크 : </td>
 						<td><input type="text" id="AD_link" placeholder="사이트 링크를 입력해주세요." /></td>
 					</tr>
-					 <tr></tr>
 					<tr>
 						<td>광고 설명 : </td>
 						<td><textarea id="AD_content" cols="60" rows="3" style="resize: none;" placeholder="광고 설명을 입력해주세요."></textarea></td>
@@ -87,13 +68,12 @@
 				</table>
 				<br><br>
 				<div id="result">
-					<input type="submit" class="btn btn-success btn-sm" value="등록하기"/> &nbsp;
-					<input type="reset" class="btn btn-danger btn-sm" value="취소하기"/>
+					<button class="btn btn-success btn-sm"  onclick="location.href='AD_Manage.jsp'">등록하기</button> &nbsp;
+					<button class="btn btn-danger btn-sm"  onclick="location.href='AD_Manage.jsp'">취소하기</button>
 				</div>
 			</form>
 		</div>
 	</div>
-	</section>
 	<br />
 	<br />
 	<br />

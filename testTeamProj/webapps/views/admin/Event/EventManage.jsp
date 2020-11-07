@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>광고 관리</title>
+<title>이벤트 관리</title>
 </head>
 
 <style>
@@ -23,7 +23,7 @@
         float : right;
     }
 
-    /* -----------------광고1 시작------------------ */
+    /* -----------------이벤트1 시작------------------ */
 
     #ad_content1 {
         margin-top : 20px;
@@ -66,9 +66,9 @@
         text-align: center;
     }
 
-    /* -----------------광고1 끝------------------ */
+    /* -----------------이벤트1 끝------------------ */
 
-    /* -----------------광고2 시작------------------ */
+    /* -----------------이벤트2 시작------------------ */
 
     #ad_content2 {
         margin-top : 20px;
@@ -111,7 +111,7 @@
         text-align: center;
     }
 
-    /* -----------------광고2 끝------------------ */
+    /* -----------------이벤트2 끝------------------ */
 
     /* -----------------foot부분 시작------------- */
 
@@ -145,11 +145,11 @@
 	<section>
         <div id="title_bar">
             <div id="title">
-                <strong style="font-size: x-large;">광고 관리</strong>
+                <strong style="font-size: x-large;">이벤트 관리</strong>
             </div>
             <ul>
-                <li><input type="checkbox" id="ad_no">광고번호</li>
-                <li><input type="checkbox" id="ad_name">광고명</li>
+                <li><input type="checkbox" id="ad_no">이벤트번호</li>
+                <li><input type="checkbox" id="ad_name">이벤트명</li>
                 <li><input type="text" id="ad_search"><input type="submit" value="검색"></li>
             </ul>
         </div>
@@ -159,15 +159,14 @@
                 <div id="ad1_img_box">
                     <img src="/<%=request.getContextPath()%>/resources/images/sample_images_01.png">
                     <div id="ad1_selct_box">
-                        <p><input type="checkbox" id="ad1_select">&nbsp;광고 선택</p>
+                        <p><input type="checkbox" id="ad1_select">&nbsp;이벤트 선택</p>
                     </div>
                 </div>
                 <br>
                 <div>
-				          법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.
-				          헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.
-				          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다.
-				          국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
+				          국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다.
+				          제3항의 승인을 얻지 못한 때에는 그 처분 또는 명령은 그때부터 효력을 상실한다.
+				          이 경우 그 명령에 의하여 개정 또는 폐지되었던 법률은 그 명령이 승인을 얻지 못한 때부터 당연히 효력을 회복한다.
                 </div>
             </div>
         </div>
@@ -178,23 +177,22 @@
                 <div id="ad2_img_box">
                     <img src="/<%=request.getContextPath()%>/resources/images/sample_images_02.png">
                     <div id="ad2_selct_box">
-                        <p><input type="checkbox" id="ad2_select">&nbsp;광고 선택</p>
+                        <p><input type="checkbox" id="ad2_select">&nbsp;이벤트 선택</p>
                     </div>
                 </div>
                 <br>
                 <div>
-			                    법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.
-			                    헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.
-			                    제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다.
-			                    국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
+			                 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다.
+				          제3항의 승인을 얻지 못한 때에는 그 처분 또는 명령은 그때부터 효력을 상실한다.
+				          이 경우 그 명령에 의하여 개정 또는 폐지되었던 법률은 그 명령이 승인을 얻지 못한 때부터 당연히 효력을 회복한다.
                 </div>
             </div>
         </div>
         <div id="foot">
             <ul>
-                <li><a href="AD_Insert.jsp" class="btn btn-success">광고 등록</a></li>
-                <li><a href="AD_Update.jsp" class="btn btn-info">광고 수정</a></li>
-                <li><button class="btn btn-danger">광고 삭제</button></li>
+                <li><a href="EventInsert.jsp" class="btn btn-success">이벤트 등록</a></li>
+                <li><a href="EventUpdate.jsp" class="btn btn-info">이벤트 수정</a></li>
+                <li><button class="btn btn-danger">이벤트 삭제</button></li>
             </ul>
         </div>
         <br><br><br><br>
@@ -212,6 +210,7 @@
 			<button>>></button>
 		</div>
 	</div>
+		
     </section>
 
 </body>
