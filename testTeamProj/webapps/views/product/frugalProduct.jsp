@@ -15,10 +15,6 @@ header {
 	text-align: center;
 }
 
-#paging{
-	text-align: center;
-}
-
 #space_area{
 	height: 20px;
 }
@@ -53,6 +49,30 @@ header {
 
 /*more_btn*/
 #more_btn {float: right; margin-right: 20px; background-color: white; border: none; font-size: 20px;}
+
+/* paging */
+#pagination {
+	text-align: center;	
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	text-align: center;
+	border: 1px solid lightgrey;
+}
+
+.pagination a.active {
+	background-color: rgb(46, 143, 88);
+	color: white;
+}
+
+.pagination a:hover:not (.active ) {
+	background-color: #ddd;
+}
 
 </style>
 </head>
@@ -261,31 +281,23 @@ header {
 	</div>
 	<br />
 	<br />
-	<br />
-	<!-- paging -->
-	<nav id="paging">
-		<ul class="pagination">
-			<li>
-				<a href="#" aria-label="Previous"> 
-					<span aria-hidden="true">&laquo;</span>
-				</a>
-			</li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li>
-				<a href="#" aria-label="Next">
-					 <span aria-hidden="true">&raquo;</span>
-				</a>
-			</li>
-		</ul>
-	</nav>
-	<!-- paging End-->
-	<br />
-	<br />
-	<br />
+	<!--paging-->	
+		</div>
+         <div class="col-md-12" id="pagination">
+		   <div class="pagination" style="text-align: center;">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+        </div>
+        <!--paging End-->
+	<br><br><br><br><br><br>
+	
 	<footer>
 		<%@ include file="../common/footer.jsp"%>
 	</footer>

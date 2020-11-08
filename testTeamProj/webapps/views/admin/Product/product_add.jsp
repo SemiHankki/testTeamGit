@@ -72,11 +72,6 @@
 </head>
 <body>
 
-	<header>
-		<div id="header">
-		<%@ include file="/views/common/header.jsp"%>
-	</div>
-	</header>
 
 	<div class="container">
 		<div class="row">
@@ -102,11 +97,12 @@
 					<div class="col-xs-8">
 						<select id="category_select">
 							<option value="select_veg" selected="selected">---선택---</option>
-							<option value="select_veg">채소</option>
-							<option value="select_fruit">과일 · 견과 · 쌀</option>
-							<option value="select_fruit">수산 · 해산 · 건어물</option>
-							<option value="select_fruit">정육 · 계란</option>
-							<option value="select_fruit">국 · 반찬 · 메인요리</option>
+							<option value="select_fruit">과일류</option>
+							<option value="select_vegetable">채소류</option>
+							<option value="select_meat">육류</option>
+							<option value="select_fish">해산물류</option>
+							<option value="select_easy_cook">간편식</option>
+							<option value="select_meal_kit">밀키트</option>
 						</select>
 
 					</div>
@@ -205,8 +201,6 @@
 		</div>		
 	</div>
 	
-	<footer> 
-	  <%@ include file="/views/common/footer.jsp"%>
-	</footer>
+	
 </body>
 </html>

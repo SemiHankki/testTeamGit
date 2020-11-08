@@ -8,7 +8,7 @@
 
 <style>
 header {
-	height: 300px;
+	height: 230px;
 }
 
 #product_picture {
@@ -152,6 +152,30 @@ thead > tr > th{
   padding: 15px; /* Some padding */
   background-color: white;
   position: fixed;
+}
+
+/* paging */
+#pagination {
+	text-align: center;	
+}
+
+.pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	text-align: center;
+	border: 1px solid lightgrey;
+}
+
+.pagination a.active {
+	background-color: rgb(46, 143, 88);
+	color: white;
+}
+
+.pagination a:hover:not (.active ) {
+	background-color: #ddd;
 }
 
 </style>
@@ -411,25 +435,22 @@ thead > tr > th{
 		
 		<div class="col-xs-12" id="review_paging">
 				
-			<nav id="paging">
-				<ul class="pagination">
-					<li>
-						<a href="#" aria-label="Previous"> 
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-					 		<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
+		<!--paging-->	
+         <div class="col-md-12" id="pagination">
+		   <div class="pagination" style="text-align: center;">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+        </div>
+        <!--paging End-->
+	  <br><br>
+	  
 		</div>
 		
 		<div class="col-xs-12" id="space_area2"><br /></div>
@@ -490,29 +511,21 @@ thead > tr > th{
 				<button type="button" class="btn btn-default">문의 작성하기</button>
 		</div>
 		
-		<!-- paging -->
-		<div class="col-xs-12" id="review_paging">
-			<nav id="paging">
-				<ul class="pagination">
-					<li>
-						<a href="#" aria-label="Previous"> 
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-					 		<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<!-- paging End -->
+		<!--paging-->	
+         <div class="col-md-12" id="pagination">
+		   <div class="pagination" style="text-align: center;">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+        </div>
+        <!--paging End-->
+	  <br><br>
      </div>
      
      <!-- top_button -->

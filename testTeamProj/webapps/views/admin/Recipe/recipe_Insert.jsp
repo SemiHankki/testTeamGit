@@ -9,10 +9,10 @@
 
    section {
        position : absolute;
-       margin : 5% 18%;
+       margin : 1% 18%;
        width : 65%;
        height : auto;
-       padding-top: 50px;
+       padding-top: 0px;
    }
 
 #title {
@@ -65,13 +65,15 @@ td {line-height : 1.5em;}
 <body>
 	<%@ include file="/views/common/adminMenu.jsp" %>
 	
-	<section>
 	 <hr>
+	<section>
 	 
 	 <!-- upper side content -->
 	   <div class="row">
 		  <div class="col-md-2"></div>
-	       <div class="col-md-8" id="name-box" style="text-align: center;">레시피 이름</div>
+	       <div class="col-md-8" id="name-box" style="text-align: center;">
+	          <input type="text" class="" placeholder="레시피 이름" style="width: 70%;">
+	       </div>
 	   </div>
 	    <br>
 	   <div class="row">
@@ -131,8 +133,9 @@ td {line-height : 1.5em;}
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
-				<img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" style="width: 1000px; padding-left: 10px;">
-				<br><br>	
+		   <div>
+				<img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" style="width: 100%; padding-left: 10px;">
+			</div>		
 		</div>
 		<div class="col-md-1"></div>
 	</div>	

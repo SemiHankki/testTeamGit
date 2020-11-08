@@ -149,28 +149,6 @@
 
 .dropdown:hover .dropbtn {background-color: white;}
 
-/*side menu*/
-div#nav-box {
-    margin: 5% 10%;
-    padding: 0;
-    font-family: "맑은 고딕";
-    font-size: 0.9em;
-    width : 160px;
-    position : absolute;
-}
-
-ul#navi {
-    width: 160px;
-    text-indent: 10px;
-}
-
-ul#navi,
-ul#navi ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border : 1px solid black;
-}
 
 li.group div.title {
     height: 35px;
@@ -208,12 +186,49 @@ li strong {
     float: right;
 }
 
+/*left-side menu*/
+#order_menu_area{
+	top: 530px;
+	left: 10px;
+}
 
+#order_menu_area > table{
+	width: 180px;
+	border: 2px solid black;
+}
 
 </style>
 
 <body>
     <%@ include file="../common/header.jsp"%>
+
+    <!-- left-side menu -->
+    <div class="col-xs-1 col-xs-offset-1" id="order_menu_area">
+				<table class="table table-hover" id="order_menu">
+					<tr>
+						<td>주문 내역</td>
+					</tr>
+					<tr>
+						<td>상품 후기</td>
+					</tr>
+					<tr>
+						<td>상품 문의</td>
+					</tr>
+					<tr>
+						<td>적립금</td>
+					</tr>
+					<tr>
+						<td>쿠폰</td>
+					</tr>
+					<tr>
+						<td>개인정보 수정</td>
+					</tr>
+					<tr>
+						<td>회원 탈퇴</td>
+					</tr>
+				</table>
+			</div>
+	<!-- left-side menu End -->
 
     <!-- 상단 회색 박스 -->
     <div class="container">
@@ -249,20 +264,6 @@ li strong {
     </div>
     </div>
     <!-- 상단 회색 박스 끝-->
-    
-     <div id="nav-box">
-        <ul id="navi">
-            <ul class="sub">
-                <li><strong>>&nbsp;</strong><a href="#">주문 내역</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">상품 후기</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">상품 문의</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">적립금</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">쿠폰</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">개인정보 수정</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">회원 탈퇴</a></li>
-            </ul>
-        </ul>
-     </div>
     
     <br><br>
     <div class="outer">

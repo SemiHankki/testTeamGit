@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레시피 목록 페이지</title>
+<title>육류</title>
 
 <style>
 header {
@@ -20,11 +20,10 @@ header {
 }
 
 /*side bar*/
-#aside {padding-right: 20px;}
-
 #aside_table{
-	width: 110px;	
+	width: 110px;
 }
+
 
 #aside > table {
 	text-align: center;
@@ -89,8 +88,6 @@ header {
 
 .dropdown:hover .dropbtn {background-color: white;}
 
-#r_picture {border-radius: 8px;}
-
 /* paging */
 #pagination {
 	text-align: center;	
@@ -122,13 +119,15 @@ header {
 		<%@ include file="../common/header.jsp"%>
 	</header>
 	
-	<br />
+	<br />	
 	<!-- right-side fixed bar -->
 	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
 		<a href="#">
 			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
 		</a>
-
+		
+		<!-- <div class="col-xs-12"><br /> <br /></div>-->
+		
 		<table class="table table-hover" id="aside_table">
 		<tbody>
 			<tr>
@@ -151,11 +150,12 @@ header {
 	</div>
 	<!-- right-side fixed bar End-->
 
-	<div class="container" id="recipe">
+	<div class="container" id="product_search">
 
 	<div class="row">
 		<div class="col-xs-12" id="header_text">
-			<h1>남김없이 한끼의 레시피</h1>
+			<h1>남김없이 한끼 육류</h1>
+			<br />
 		</div>
 
 		<div class="col-xs-10" id="space_area">
@@ -171,9 +171,10 @@ header {
   				</button>
   			
   				<div class="dropdown-content" role="menu" aria-labelledby="dropdownMenu1">
-    				<a role="menuitem" href="#">조회순</a>
-    				<a role="menuitem" href="#">최근순</a>
-    				<a role="menuitem" href="#">오래된순</a>
+    				<a role="menuitem" href="#">인기순</a>
+    				<a role="menuitem" href="#">신상품순</a>
+    				<a role="menuitem" href="#">낮은 가격순</a>
+    				<a role="menuitem" href="#">높은 가격순</a>
   				</div>
 			</div>
         <!-- End sidebar dropdown -->
@@ -182,59 +183,64 @@ header {
 			<br />
 		</div>
 
-			<div class="col-xs-6">
-				<a href="../recipeDetail.jsp" class="thumbnail" target="_blank">
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_11_.PNG" />
+			<div class="col-xs-4">
+				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"
+				target="_blank">
+				 <img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
 				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>치즈 조개구이</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/shellfish.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/cheese.png" width="30px" height="30px">
-					</p>
+				<div class="caption">
+					<h3>test caption1</h3>
+					<p>test comment1</p>
 				</div>
 			</div>
-			<div class="col-xs-6">
-				<a href="#" class="thumbnail"> 
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_22.PNG" />
+			<div class="col-xs-4">
+				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_02.png" />
 				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>레몬향 연어덮밥</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/salmon1.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/lemon.png" width="30px" height="30px">
-					</p>
+				<div class="caption">
+					<h3>test caption2</h3>
+					<p>test comment2</p>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_03.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption3</h3>
+					<p>test comment3</p>
 				</div>
 			</div>
 
 			<div class="col-xs-12" id="space_area">
 				<br />
 			</div>
-             <br>
-			<div class="col-xs-6">
-				<a href="#" class="thumbnail"> 
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_33_.png" />
+
+			<div class="col-xs-4">
+				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_04.png" />
 				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>호밤 쉐이크</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/milk.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/pumpkin.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/acorn.png" width="30px" height="30px">
-					</p>
+				<div class="caption">
+					<h3>test caption4</h3>
+					<p>test comment4</p>
 				</div>
 			</div>
-			<div class="col-xs-6">
-			    <a href="#" class="thumbnail"> 
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_44.PNG" />
+			<div class="col-xs-4">
+				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_05.png" />
 				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>어니언 치킨과 고구마칩</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/chicken3.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/onion.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/potato.png" width="30px" height="30px">
-					</p>
+				<div class="caption">
+					<h3>test caption5</h3>
+					<p>test comment5</p>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+					src="<%=request.getContextPath()%>/resources/images/sample_images_06.png" />
+				</a>
+				<div class="caption">
+					<h3>test caption6</h3>
+					<p>test comment6</p>
 				</div>
 			</div>
 		</div>
@@ -242,7 +248,7 @@ header {
 	<br />
 	<br />
 
-	    <!--paging-->	
+	     <!--paging-->	
          <div class="col-md-12" id="pagination">
 		   <div class="pagination" style="text-align: center;">
             <a href="#">&laquo;</a>
@@ -257,7 +263,7 @@ header {
         </div>
         <!--paging End-->
 	<br><br><br><br><br><br>
-	
+
 	<footer>
 		<%@ include file="../common/footer.jsp"%>
 	</footer>

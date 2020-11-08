@@ -66,7 +66,7 @@
 
 /* paging */
 #pagination {
-	text-align: center;
+	text-align: center;	
 }
 
 .pagination a {
@@ -76,6 +76,7 @@
 	text-decoration: none;
 	transition: background-color .3s;
 	text-align: center;
+	border: 1px solid lightgrey;
 }
 
 .pagination a.active {
@@ -87,31 +88,9 @@
 	background-color: #ddd;
 }
 
+/*Table*/
 .lable_check {
 	padding-right: 30px !important;
-}
-
-/*side menu*/
-div#nav-box {
-    margin: 5% 10%;
-    padding: 0;
-    font-family: "맑은 고딕";
-    font-size: 0.9em;
-    width : 160px;
-    position : absolute;
-}
-
-ul#navi {
-    width: 160px;
-    text-indent: 10px;
-}
-
-ul#navi,
-ul#navi ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border : 1px solid black;
 }
 
 li.group div.title {
@@ -150,6 +129,17 @@ li strong {
     float: right;
 }
 
+/*left-side menu*/
+#order_menu_area{
+	top: 280px;
+	left: 10px;
+}
+
+#order_menu_area > table{
+	width: 180px;
+	border: 2px solid black;
+}
+
 </style>
 
 </head>
@@ -157,15 +147,22 @@ li strong {
 
 	<%@ include file="../common/header.jsp"%>
 	
-	 <div id="nav-box">
-        <ul id="navi">
-            <ul class="sub">
-                <li><strong>>&nbsp;</strong><a href="#">공지사항</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">자주하는 질문</a></li>
-                <li><strong>>&nbsp;</strong><a href="#">1:1 문의</a></li>
-            </ul>
-        </ul>
-    </div>
+	 <!-- left-side menu -->
+    <div class="col-xs-1 col-xs-offset-1" id="order_menu_area">
+				<table class="table table-hover" id="order_menu">
+					<tr>
+						<td>공지사항</td>
+					</tr>
+					<tr>
+						<td>자주하는 질문</td>
+					</tr>
+					<tr>
+						<td>1:1 문의</td>
+					</tr>
+				</table>
+			</div>
+	<!-- left-side menu End -->	
+	<!-- <a href="#">1:1 문의</a> -->
     
 	<!--notice table-->
 	<div class="outer">

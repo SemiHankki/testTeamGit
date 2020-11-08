@@ -36,28 +36,6 @@
 	padding: 10px;	
 }
 
-/*
-#nav {
-	font-size: 20px;
-	background-color: rgb(46,143,88);
-}
-.nav-item {
-	margin: 0 30px;
-	color: white;
-}
-#nav_menu > li > a {
-    color: white;
-}
-#dropdown{
-	margin: 0 48px;
-}
-#dropdown-menu{
-	font-size: 20px;
-	text-height: 20px;
-}
-header {height: 250px;}
-#s_button {color: rgb(46,143,88);}
-*/
 
 /*menu css*/
 #nav_container {
@@ -99,71 +77,31 @@ header {height: 250px;}
 	border-left: 1px solid black;*/
 }
 
-.dropdown-menu {
+.dropdown-menu > li > a > p {
 	font-size: 16px;
 	text-align: center;
 }
 
-.dropdown-menu > li:hover {
-	background-color: rgb(248,240,211);
+.dropdown-menu > li> a > p:link {
+    font-size: 16px;
+	text-align: center;
+	background-color: white;
 	color: black;
+	border-top: 1px solid green;
 }
 
-
-/*shopping cart popup*/
-/* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+.dropdown-menu > li > a > p:hover {
+	/*border: 2px solid green;*/
+	color: green;	
 }
 
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 250px;
-  height: 300px;
-  background-color: #555;
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  top: auto;
-  left: 50%;
-  margin-left: -80px;
+.dropdown-menu > li {
+	/*border: 2px solid green;*/
+	color: green;
+	background-color: lemon;
+	border: 1px solid green;	
 }
 
-/* Popup arrow */
-/*.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}*/
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-} 
 </style>
 
 </head>
@@ -185,25 +123,15 @@ header {height: 250px;}
 			<!-- top-right menu area -->
 			<div class="col-md-offset-8" id="headmenu">
 				<ul class="list-inline">
-					<li><a href="#">회원가입</a></li>
+					<li><a href="<%=request.getContextPath()%>/views/member/signup.jsp">회원가입</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/member/loginForm.jsp">로그인</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/order/orderList.jsp">주문배송</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/notice/noticeList.jsp">고객센터</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/shoppingCart/shopping_cart.jsp"><img src="<%=request.getContextPath()%>/resources/images/shopping_cart.png" width="20px" height="20px"></a></li>
-				      <!-- <div class="popup" onclick="myFunction()"><img src="<%=request.getContextPath()%>/resources/images/shopping_cart.png" width="20px" height="20px">
-                        <span class="popuptext" id="myPopup">나의 장바구니</span>
-                      </div> -->
 				</ul>
 			</div>
 		</div>
-		
-			 <!--  <script>
-             // When the user clicks on <div>, open the popup
-               function myFunction() {
-                var popup = document.getElementById("myPopup");
-                            popup.classList.toggle("show");
-               }
-             </script>-->             
+		            
 		<!-- top-right menu area End-->
 		
 		<!-- middle menu area -->
@@ -216,9 +144,13 @@ header {height: 250px;}
 					     width="20px" height="20px" style="margin-bottom: 5px; margin-right: 10px;">카테고리</a>
 
 					<ul class="dropdown-menu" role="menu"> 
-						<li>과일/채소류</li>
-						<li>생선/육류</li>
-						<li>간편식/밀키트</li>
+						<li><a href="<%=request.getContextPath()%>/views/product/fruit.jsp"><p>과일류</p></a></li>
+						<li><a href="<%=request.getContextPath()%>/views/product/vegetable.jsp"><p>채소류</p></a></li>
+						<li><a href="<%=request.getContextPath()%>/views/product/meat.jsp"><p>육류</p></a></li>
+						<li><a href="<%=request.getContextPath()%>/views/product/fish.jsp"><p>해산물류</p></a></li>
+						<li><a href="<%=request.getContextPath()%>/views/product/easy_cook.jsp"><p>간편식</p></a></li>
+						<li><a href="<%=request.getContextPath()%>/views/product/meal_kit.jsp"><p>밀키트</p></a></li>
+					
 						<!-- <li><a href="#">간편식/밀키트</a></li> -->
 						
 					</ul>
