@@ -45,13 +45,13 @@
 	</div>
 	<div class="row">
 		<div class="col-md-7 col-md-offset-3" id="content">
-			<img src="/<%=request.getContextPath()%>/resources/images/sample_images_01.png" >
+			<img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" >
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-md-5 col-md-offset-4">
-			<form action="#">
+			<form action="AD_Manage.jsp">
 				<table>
 					<tr>
 						<td>광고 제목 : </td>
@@ -68,8 +68,8 @@
 				</table>
 				<br><br>
 				<div id="result">
-					<button class="btn btn-success btn-sm"  onclick="location.href='AD_Manage.jsp'">수정하기</button> &nbsp;
-					<button class="btn btn-danger btn-sm"  onclick="location.href='AD_Manage.jsp'">취소하기</button>
+					<button type="submit" class="btn btn-success btn-md">수정하기</button> &nbsp;
+					<button class="btn btn-danger btn-md">취소하기</button>
 				</div>
 			</form>
 		</div>

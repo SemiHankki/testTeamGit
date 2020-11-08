@@ -45,13 +45,13 @@
 	</div>
 	<div class="row">
 		<div class="col-md-7 col-md-offset-3" id="content">
-			<img src="/<%=request.getContextPath()%>/resources/images/sample_images_01.png" >
+			<img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" >
 		</div>
 	</div>
 	<br>
 	<div class="row">
 		<div class="col-md-5 col-md-offset-4">
-			<form action="#">
+			<form action="EventManage.jsp">
 				<table>
 					<tr>
 						<td>이벤트 제목 : </td>
@@ -64,8 +64,8 @@
 				</table>
 				<br><br>
 				<div id="result">
-					<button class="btn btn-success btn-sm"  onclick="location.href='EventManage.jsp'">등록하기</button> &nbsp;
-					<button class="btn btn-danger btn-sm"  onclick="location.href='EventManage.jsp'">취소하기</button>
+					<button type="submit" class="btn btn-success btn-md">등록하기</button> &nbsp;
+					<button class="btn btn-danger btn-md">취소하기</button>
 				</div>
 			</form>
 		</div>

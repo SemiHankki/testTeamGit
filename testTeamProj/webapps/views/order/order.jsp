@@ -156,7 +156,7 @@
 <body>
 	<%@ include file="../common/header.jsp" %>
 	
-	<div class="container" style="padding : 12% 0 5% 0;">
+	<div class="container" style="padding-bottom : 5%;">
 		<div class="row">
 			<div id="order-box" class="col-md-10 col-md-offset-1" style="height : 1200px;">
 				<div id="title" style="font-size : 28px; border-bottom : 1px dotted black;">

@@ -157,7 +157,7 @@
             <p>No.1</p>
             <div id="ad1_box">
                 <div id="ad1_img_box">
-                    <img src="/<%=request.getContextPath()%>/resources/images/sample_images_01.png">
+                    <img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png">
                     <div id="ad1_selct_box">
                         <p><input type="checkbox" id="ad1_select">&nbsp;이벤트 선택</p>
                     </div>
@@ -175,7 +175,7 @@
             <p>No.2</p>
             <div id="ad2_box">
                 <div id="ad2_img_box">
-                    <img src="/<%=request.getContextPath()%>/resources/images/sample_images_02.png">
+                    <img src="<%=request.getContextPath()%>/resources/images/sample_images_02.png">
                     <div id="ad2_selct_box">
                         <p><input type="checkbox" id="ad2_select">&nbsp;이벤트 선택</p>
                     </div>

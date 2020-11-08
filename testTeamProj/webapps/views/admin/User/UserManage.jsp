@@ -76,7 +76,7 @@
 	<hr />
 	<br /><br />
 	<div class="row">
-		<div class="col-md-2 col-md-offset-3" style="font-size : 30px">회원 관리</div>
+		<div class="col-md-2 col-md-offset-3" style="font-size : 30px"><b>회원 관리</b></div>
 		<div class="col-md-5" id="search">
 			<ul>
                 <li><input type="checkbox">&nbsp;광고번호&nbsp;</li>

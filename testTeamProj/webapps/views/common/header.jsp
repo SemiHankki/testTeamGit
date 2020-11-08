@@ -102,6 +102,12 @@
 	border: 1px solid green;	
 }
 
+#adminPage {
+	position : absolute;
+	top : 0;
+	z-index : 1000000;
+}
+
 </style>
 
 </head>
@@ -123,7 +129,7 @@
 			<!-- top-right menu area -->
 			<div class="col-md-offset-8" id="headmenu">
 				<ul class="list-inline">
-					<li><a href="<%=request.getContextPath()%>/views/member/signup.jsp">회원가입</a></li>
+					<li><a href="<%=request.getContextPath()%>/views/member/signUp.jsp">회원가입</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/member/loginForm.jsp">로그인</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/order/orderList.jsp">주문배송</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/notice/noticeList.jsp">고객센터</a></li>
@@ -155,23 +161,23 @@
 						
 					</ul>
 				</div>
-
+				
 				<script>
 					$(document).ready(function() {
-						$('.dropdown-toggle').mouseover(function() {
+						$('.dropdown_category').mouseover(function() {
 							$('.dropdown-menu').show();
 						})
 
-						$('.dropdown-toggle').mouseout(function() {
+						$('.dropdown_category').mouseout(function() {
 							t = setTimeout(function() {
-								$('.dropdown-menu').hide();
+								$('.category_menu').hide();
 							}, 100);
 
-							$('.dropdown-menu').on('mouseenter', function() {
-								$('.dropdown-menu').show();
+							$('.category_menu').on('mouseenter', function() {
+								$('.category_menu').show();
 								clearTimeout(t);
 							}).on('mouseleave', function() {
-								$('.dropdown-menu').hide();
+								$('.category_menu').hide();
 							})
 						})
 					})
@@ -201,6 +207,10 @@
 		</div>
 
 	</header>
-
+	<button id="adminPage" class="btn btn-warning btn-md"
+	onclick="location.href='<%= request.getContextPath() %>/views/admin/User/UserManage.jsp'">관리자 페이지로 이동</button>
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br />
+	
 </body>
 </html>
