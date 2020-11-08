@@ -90,6 +90,14 @@
 	background-color: #ddd;
 }
 
+.button1{
+     width: 100px;
+     height: 40px;
+     background-color: green;
+     border: none;
+     color: white;
+     border-radius: 5px;
+}
 </style>
 
 </head>
@@ -143,8 +151,11 @@
 				
 			</table>
 		<!--notice table End-->
-			
-		
+		<br>
+		<div style="float: right;">
+					<a href="<%=request.getContextPath()%>/views/order/orderForm.jsp"><button type="submit" class="button1">결제하기</button></a>
+				</div>
+		<br>		
 	    <!--paging-->	
 		</div>
          <div class="col-md-12" id="pagination">
