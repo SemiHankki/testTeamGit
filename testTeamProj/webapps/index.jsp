@@ -3,15 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
- 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" content="남김없이 한끼"> 
-    <meta name="keywords" content="다이어트, 식단, 닭가슴살, 요리, 레시피">
-    <meta name="description" content="모두가 사랑하는 장보기, 당일 수확 채소, 과일, 맛집 음식까지 내일 아침 문 앞에서 만나요!">
-    <meta property="og:title" content="남김없이 한끼">
-    <meta property="og:description" content="모두가 사랑하는 장보기, 당일 수확 채소, 과일, 맛집 음식까지 내일 아침 문 앞에서 만나요!">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
+<meta charset="UTF-8">
 <title>남김 없이 한끼</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">           
@@ -33,7 +25,7 @@ body, h3, h4, p {
 	}
 
 header {
-	height: 300px;
+	height: 230px;
 }
 
 #advertisement {
@@ -81,6 +73,39 @@ header {
   position: fixed;
 }
 
+/*side bar*/
+#aside_table{
+	width: 110px;
+}
+
+
+#aside > table {
+	text-align: center;
+}
+
+#aside_table > tbody > tr >td{
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
+
+#row1{
+	border-top: 2px solid black;
+}
+
+#row3{
+	border-bottom: 2px solid black;
+}
+
+#aside_table > tbody > tr > td > a{
+	text-decoration: none;
+	color: black;
+}
+
+#aside_table > tbody > tr > td:hover{
+	background-color: rgb(248,240,211);
+	color: black;
+}
+
  
 </style>
 </head>
@@ -89,6 +114,35 @@ header {
 	<header>
 		<%@ include file="views/common/header.jsp"%>
 	</header>
+	
+	<br />	
+	<!-- right-side fixed bar -->
+	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
+		<a href="#">
+			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
+		</a>
+		
+		<table class="table table-hover" id="aside_table">
+		<tbody>
+			<tr>
+				<td id="row1">
+					<a href="#">등급별 혜택</a>
+				</td>
+			</tr>
+			<tr>
+				<td id="row2">
+					<a href="<%= request.getContextPath()%>/views/recipe/recipeList.jsp">레시피</a>
+				</td>
+			</tr>
+			<tr>
+				<td id="row3">
+					<a href="#">베스트 후기</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- right-side fixed bar End-->
 
     <!-- Advertisement -->
 	<div class="container" id="advertisement">

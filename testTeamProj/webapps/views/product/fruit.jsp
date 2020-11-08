@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 조회</title>
+<title>과일류</title>
 
 <style>
 header {
@@ -154,9 +154,8 @@ header {
 
 	<div class="row">
 		<div class="col-xs-12" id="header_text">
-			<h1>상품 검색</h1>
+			<h1>남김없이 한끼 과일</h1>
 			<br />
-			<h4>남김없이 한끼의 상품을 검색해 보세요.</h4>
 		</div>
 
 		<div class="col-xs-10" id="space_area">
@@ -248,7 +247,8 @@ header {
 	</div>
 	<br />
 	<br />
-	<!--paging-->	
+
+	     <!--paging-->	
          <div class="col-md-12" id="pagination">
 		   <div class="pagination" style="text-align: center;">
             <a href="#">&laquo;</a>
@@ -263,7 +263,7 @@ header {
         </div>
         <!--paging End-->
 	<br><br><br><br><br><br>
-	
+
 	<footer>
 		<%@ include file="../common/footer.jsp"%>
 	</footer>

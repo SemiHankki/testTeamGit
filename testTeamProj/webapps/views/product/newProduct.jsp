@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 조회</title>
+<title>신상품</title>
 
 <style>
 header {
@@ -154,9 +154,8 @@ header {
 
 	<div class="row">
 		<div class="col-xs-12" id="header_text">
-			<h1>상품 검색</h1>
+			<h1>남김없이 한끼 신상품</h1>
 			<br />
-			<h4>남김없이 한끼의 상품을 검색해 보세요.</h4>
 		</div>
 
 		<div class="col-xs-10" id="space_area">
@@ -195,7 +194,7 @@ header {
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+				<a href="#" class="thumbnail"> <img
 					src="<%=request.getContextPath()%>/resources/images/sample_images_02.png" />
 				</a>
 				<div class="caption">
@@ -204,7 +203,7 @@ header {
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+				<a href="#" class="thumbnail"> <img
 					src="<%=request.getContextPath()%>/resources/images/sample_images_03.png" />
 				</a>
 				<div class="caption">
@@ -218,7 +217,7 @@ header {
 			</div>
 
 			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+				<a href="#" class="thumbnail"> <img
 					src="<%=request.getContextPath()%>/resources/images/sample_images_04.png" />
 				</a>
 				<div class="caption">
@@ -227,7 +226,7 @@ header {
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+				<a href="#" class="thumbnail"> <img
 					src="<%=request.getContextPath()%>/resources/images/sample_images_05.png" />
 				</a>
 				<div class="caption">
@@ -236,7 +235,7 @@ header {
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"> <img
+				<a href="#" class="thumbnail"> <img
 					src="<%=request.getContextPath()%>/resources/images/sample_images_06.png" />
 				</a>
 				<div class="caption">
@@ -248,7 +247,8 @@ header {
 	</div>
 	<br />
 	<br />
-	<!--paging-->	
+	
+	     <!--paging-->	
          <div class="col-md-12" id="pagination">
 		   <div class="pagination" style="text-align: center;">
             <a href="#">&laquo;</a>

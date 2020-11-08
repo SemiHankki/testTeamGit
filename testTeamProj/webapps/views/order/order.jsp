@@ -26,7 +26,7 @@
 	
 	/* ------------------주문정보 시작------------------- */
 	#order-box {
-		background-image : url('/Semi/resources/images/order_background.jpg');
+		background-image : url(<%= request.getContextPath() %>/resources/images/order_background.jpg);
 	}
 	
 	#order-info>thead>tr>th {
@@ -139,12 +139,24 @@
 	}
 	/*--------------------결제 끝-----------------------*/
 	
+	/*--------------------정규표현식(숫자만) 시작-------------------------*/
+	#numChk {
+		display : none;
+		color : gray;
+	}
+	
+	#numChk2 {
+		display : none;
+		color : lightgreen;
+	}
+	/*--------------------정규표현식(숫자만) 끝-------------------------*/
+	
 </style>
 </head>
 <body>
 	<%@ include file="../common/header.jsp" %>
 	
-	<div class="container">
+	<div class="container" style="padding : 12% 0 5% 0;">
 		<div class="row">
 			<div id="order-box" class="col-md-10 col-md-offset-1" style="height : 1200px;">
 				<div id="title" style="font-size : 28px; border-bottom : 1px dotted black;">
@@ -167,14 +179,14 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><img src="/Semi/resources/images/chicken2.jpg"/></td>
+							<td><img src="<%= request.getContextPath() %>/resources/images/chicken2.jpg"/></td>
 							<td>Winner Winner Chicken Dinner !</td>
 							<td>1</td>
 							<td>-</td>
 							<td>19,900 원</td>
 						</tr>
 						<tr>
-							<td><img src="/Semi/resources/images/burger.jpg"/></td>
+							<td><img src="<%= request.getContextPath() %>/resources/images/burger.jpg"/></td>
 							<td>스폰지밥의 게살버거</td>
 							<td>2</td>
 							<td>-</td>
@@ -233,8 +245,10 @@
 					<div id="newAdd" style="display : none;">
 						<div class="row">
 							<div class="col-md-12" id="new1">
-								<b>수령인 : </b> <input type="text" style="width: 60%;" placeholder="수령인 이름을 입력해주세요." /><br>
-								<b>연락처 : </b> <input type="text" id="phone" style="width: 60%;" placeholder="연락처를 입력해주세요." />
+								<b>수령인 : </b> <input type="text" style="width: 50%;" placeholder="수령인 이름을 입력해주세요." /><br>
+								<b>연락처 : </b> <input type="text" id="phone" style="width: 50%;" placeholder="연락처를 입력해주세요." maxlength="11" />
+								<span id="numChk">숫자만 입력해주세요..</span>
+								<span id="numChk2">잘하고 있어요!</span>
 							</div>
 						</div>
 						<div class="row">
@@ -280,6 +294,7 @@
 							<p id="usePoint">
 								<b>└ 사용할 적립포인트</b>
 								<input type="text" placeholder="0" />원
+								<button class="btn btn-default btn-sm" style="float:right; margin-right:10%;">전액 사용</button>
 							</p>
 						</div>
 						<div id="payMoney" class="col-md-5 col-md-offset-1">
@@ -318,7 +333,7 @@
 				$('#newAdd').hide();
 				$('#originAdd').show();
 			} else {
-				$('#originAdd').hide()
+				$('#originAdd').hide();
 				$('#newAdd').show();
 			}
 		}
@@ -392,7 +407,26 @@
 		}
 	</script>
 	<!------------------------------------- Daum 주소 API 스크립트 끝 ----------------------------------------->
-
+	
+	<!------------------------------------- 정규 표현식(숫자만) 스크립트 시작 --------------------------------->
+	<script>
+		$('#phone').bind("keyup", function(event) {
+			var re = /\d/;
+			var temp = $('#phone').val();
+			
+			if(re.test(temp)) {
+				$('#numChk2').show();
+				$('#numChk2').fadeOut(2000);
+				
+			} else {
+				$('#numChk').show();
+				$('#numChk').fadeOut(2000);
+				
+				$('#phone').val(temp.replace(/[^0-9]/g, ""));
+			}
+		})
+	</script>
+	<!------------------------------------- 정규 표현식(숫자만) 스크립트 끝 --------------------------------->
 	<%@ include file="../common/footer.jsp" %>
 </body>
 </html>

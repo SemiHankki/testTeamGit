@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 관리</title>
+<title>레시피 관리</title>
 
 <style>
 
@@ -90,6 +90,7 @@ section {
 	background-color: #ddd;
 }
 
+#r_picture {}
 </style>
 
 </head>
@@ -101,17 +102,17 @@ section {
          <section>
 			<div class="col-xs-11" id="title_content">
 				<div class="col-xs-3" id="title">
-					<h2>상품 관리</h2>
+					<h2>레시피 관리</h2>
 				</div>
-				<div class="col-xs-9" id="checkbox_top">
+				<div class="col-xs-8" id="checkbox_top">
 				    <div style="float:right; padding-top: 20px;">
 					<input type="checkbox" id="ad_num"
 						style="width: 20px; height: 16px;" /> &nbsp; <label
-						for="ad_num"> 상품 번호</label>
+						for="ad_num"> 레시피 번호</label>
 						
 					<input type="checkbox" id="ad_name"
 						style="width: 20px; height: 16px;" /> &nbsp; <label
-						for="ad_name"> 상품 이름</label>
+						for="ad_name"> 레시피 이름</label>
 						
                     <input type="text" placeholder="Search" style="height: 30px; width: 200px;">
 				    <button type="submit" style="height: 30px">Go!</button>			
@@ -120,86 +121,71 @@ section {
 			</div>
 
 
-			<div class="col-xs-11" id="product_select_area">
-
-				<div class="col-xs-11" id="space_area"></div>
-				<div class="col-xs-4">
-					<a
-						href="<%=request.getContextPath()%>/views/product/product_detail.jsp"
-						class="thumbnail" target="_blank"> <img
-						src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
-					</a>
-					<div class="caption">
+			    
+		<div class="col-xs-12" id="space_area">
+			<br />
+		</div>
+            <div class="col-xs-1"></div>
+			<div class="col-xs-5">
+				<a href="#" class="thumbnail" target="_blank">
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
+				</a>
+				<div class="caption">
 						<h3>test caption1</h3>
 						<p>test comment1</p>
 						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
 						<label for="product_num"> 상품 선택</label>
-					</div>
 				</div>
-				<div class="col-xs-4">
-					<a href="#" class="thumbnail"> <img
-						src="<%=request.getContextPath()%>/resources/images/sample_images_02.png" />
-					</a>
-					<div class="caption">
+			</div>
+			<div class="col-xs-5">
+				<a href="#" class="thumbnail"> 
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
+				</a>
+				<div class="caption">
 						<h3>test caption2</h3>
 						<p>test comment2</p>
 						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
 						<label for="product_num"> 상품 선택</label>
-					</div>
 				</div>
-				<div class="col-xs-4">
-					<a href="#" class="thumbnail"> <img
-						src="<%=request.getContextPath()%>/resources/images/sample_images_03.png" />
-					</a>
-					<div class="caption">
+			</div>
+			<div class="col-xs-1"></div>
+			<div class="col-xs-12" id="space_area">
+				<br />
+			</div>
+             <br>
+             <div class="col-xs-1"></div>
+			<div class="col-xs-5">
+				<a href="#" class="thumbnail"> 
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
+				</a>
+				<div class="caption">
 						<h3>test caption3</h3>
 						<p>test comment3</p>
 						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
 						<label for="product_num"> 상품 선택</label>
-					</div>
 				</div>
-
-				<div class="col-xs-11" id="space_area2"></div>
-
-				<div class="col-xs-4">
-					<a href="#" class="thumbnail"> <img
-						src="<%=request.getContextPath()%>/resources/images/sample_images_04.png" />
-					</a>
-					<div class="caption">
+			</div>
+			<div class="col-xs-5">
+			    <a href="#" class="thumbnail"> 
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
+				</a>
+				<div class="caption">
 						<h3>test caption4</h3>
 						<p>test comment4</p>
 						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
 						<label for="product_num"> 상품 선택</label>
-					</div>
 				</div>
-				<div class="col-xs-4">
-					<a href="#" class="thumbnail"> <img
-						src="<%=request.getContextPath()%>/resources/images/sample_images_05.png" />
-					</a>
-					<div class="caption">
-						<h3>test caption5</h3>
-						<p>test comment5</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
-					</div>
-				</div>
-				<div class="col-xs-4">
-					<a href="#" class="thumbnail"> <img
-						src="<%=request.getContextPath()%>/resources/images/sample_images_06.png" />
-					</a>
-					<div class="caption">
-						<h3>test caption6</h3>
-						<p>test comment6</p>
-						<input type="checkbox" id="product_num" style="width: 20px; height: 16px;" /> &nbsp;
-						<label for="product_num"> 상품 선택</label>
-					</div>
-				</div>
+			</div>
+			<div class="col-xs-1"></div>
+	
+	<br />
+	<br />
 
 				<div class="space_area col-xs-12"><br /></div>
                 
-				<div class="col-xs-12" id="button_area">
+				<div class="col-xs-10" id="button_area">
 				        <br>
-					    <div style="float: right;">
+					    <div style="float: right; padding-right: 70px;">
 						<button type="button" class="btn btn-success btn-lg">등록</button>
 				
 				
@@ -209,7 +195,7 @@ section {
 						<button type="button" class="btn btn-danger btn-lg">삭제</button>
 						</div>
 					</div>
-				</div>
+				<div class="col-xs-2"></div>
 				
 				<div class="space_area col-xs-12" style="padding-bottom:10px; padding-top:10px;"></div>
 
