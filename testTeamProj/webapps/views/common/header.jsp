@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="com.kh.jsp.member.model.vo.*"%>
+<%
+	Member m = (Member)session.getAttribute("Member");
+%>
 
 <!-- 제이쿼리 불러오기 -->
 <script
@@ -72,9 +75,6 @@
 	height: 58px;
 	width: 160px;
 	font-size: 20px;
-	/*border-bottom: 1px solid black;
-	border-top: 1px solid black;
-	border-left: 1px solid black;*/
 }
 
 .dropdown-menu > li > a > p {
@@ -96,7 +96,6 @@
 }
 
 .dropdown-menu > li {
-	/*border: 2px solid green;*/
 	color: green;
 	background-color: lemon;
 	border: 1px solid green;	
@@ -111,8 +110,6 @@
 </style>
 
 </head>
-
-
 <body>
    
 	<header class="main_menu_area">
@@ -127,15 +124,25 @@
 			<!-- logo's area End-->
 			
 			<!-- top-right menu area -->
+			<% if( m == null) { %>
 			<div class="col-md-offset-8" id="headmenu">
 				<ul class="list-inline">
 					<li><a href="<%=request.getContextPath()%>/views/member/signUp.jsp">회원가입</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/member/loginForm.jsp">로그인</a></li>
-					<li><a href="<%=request.getContextPath()%>/views/order/orderList.jsp">주문배송</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/notice/noticeList.jsp">고객센터</a></li>
+				</ul>
+			</div>
+			<% } else { %>
+			<div class="col-md-offset-8" id="headmenu">
+				<ul class="list-inline">
+					<li><a href="<%=request.getContextPath()%>/views/member/updateForm.jsp">회원정보수정</a></li>
+					<li><a href="<%=request.getContextPath()%>/views/member/loginForm.jsp">로그아웃</a></li>
+					<li><a href="<%=request.getContextPath()%>/views/notice/noticeList.jsp">고객센터</a></li>
+					<li><a href="<%=request.getContextPath()%>/views/order/orderList.jsp">주문배송</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/shoppingCart/shopping_cart.jsp"><img src="<%=request.getContextPath()%>/resources/images/shopping_cart.png" width="20px" height="20px"></a></li>
 				</ul>
 			</div>
+			<% } %>
 		</div>
 		            
 		<!-- top-right menu area End-->
@@ -145,39 +152,36 @@
 			<div class="container" id="nav_container">
 
 				<div class="col-xs-2" id="dropdown_category">
-					<a class="dropdown-toggle" data-toggle="dropdown">
+					<a class="category_dropmenu dropdown-toggle" data-toggle="dropdown">
 					<img src="<%=request.getContextPath()%>/resources/images/three_line.png" 
 					     width="20px" height="20px" style="margin-bottom: 5px; margin-right: 10px;">카테고리</a>
 
-					<ul class="dropdown-menu" role="menu"> 
+					<ul class="dropdown_item dropdown-menu" role="menu"> 
 						<li><a href="<%=request.getContextPath()%>/views/product/fruit.jsp"><p>과일류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/vegetable.jsp"><p>채소류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/meat.jsp"><p>육류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/fish.jsp"><p>해산물류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/easy_cook.jsp"><p>간편식</p></a></li>
-						<li><a href="<%=request.getContextPath()%>/views/product/meal_kit.jsp"><p>밀키트</p></a></li>
-					
-						<!-- <li><a href="#">간편식/밀키트</a></li> -->
-						
+						<li><a href="<%=request.getContextPath()%>/views/product/meal_kit.jsp"><p>밀키트</p></a></li>		
 					</ul>
 				</div>
-				
+
 				<script>
 					$(document).ready(function() {
-						$('.dropdown_category').mouseover(function() {
-							$('.dropdown-menu').show();
+						$('.category_dropmenu').mouseover(function() {
+							$('.dropdown_item').show();
 						})
 
-						$('.dropdown_category').mouseout(function() {
+						$('.category_dropmenu').mouseout(function() {
 							t = setTimeout(function() {
-								$('.category_menu').hide();
+								$('.dropdown_item').hide();
 							}, 100);
 
-							$('.category_menu').on('mouseenter', function() {
-								$('.category_menu').show();
+							$('.dropdown_item').on('mouseenter', function() {
+								$('.dropdown_item').show();
 								clearTimeout(t);
 							}).on('mouseleave', function() {
-								$('.category_menu').hide();
+								$('.dropdown_item').hide();
 							})
 						})
 					})
@@ -198,19 +202,40 @@
 				<div class="search_area col-xs-2">
 					<div class="input-group">
 						<span class="input-group-btn">
-							<button class="btn btn-default" type="button" style="margin-top: 2px;">Go!</button>
-						</span> <input type="text" class="form-control" placeholder="Search for..." style="margin-top: 13px;">
+							<button id="searchBtn" class="btn btn-default" type="button" style="margin-top: 2px;">Go!</button>
+						</span> <input id="searchArea" type="text" class="form-control" placeholder="Search for..." style="margin-top: 13px;">
 					</div>
 				</div>
 			</div>
 			<!-- middle menu area End-->
 		</div>
-
 	</header>
-	<button id="adminPage" class="btn btn-warning btn-md"
-	onclick="location.href='<%= request.getContextPath() %>/views/admin/User/UserManage.jsp'">관리자 페이지로 이동</button>
+	
+		<button id="adminPage" class="btn btn-warning btn-md"
+		onclick="location.href='<%= request.getContextPath() %>/views/admin/User/UserManage.jsp'">관리자 페이지로 이동</button>
+	
 	<br /><br /><br /><br /><br /><br />
 	<br /><br /><br /><br /><br />
-	
+
+
+	<script>
+		$('#searchBtn').on('click', function(){
+			var temp = $('#searchArea').val();
+			
+			if(temp == '') {
+				alert("빈칸");
+			} else if(temp.length < 2) {
+				alert("두글자 이상 입력해주세요.");
+			}
+		});
+		
+		$('#searchArea').keydown(function(key){
+			if(key.keyCode==13){
+				$('#searchBtn').click();
+				return false;
+			}
+		});
+	</script>
+
 </body>
 </html>
