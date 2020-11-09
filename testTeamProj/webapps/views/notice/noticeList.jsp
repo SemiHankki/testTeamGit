@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*, com.kh.jsp.notice.model.vo.Notice" %>
+<% ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list"); %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -179,60 +182,19 @@ li strong {
 		<div class="table">
 			<table class="table table-hover" id="userTable">
 				<tr id="thead">
-					<td>번호</td>
-					<td>제목</td>
-					<td>작성일</td>					
+					<th>번호</th>
+					<th width="300px">제목</th>
+					<th width="100px">작성일</th>
+					<th>조회수</th>					
 				</tr>
+				<% for(Notice n : list){ %>
 				<tr>
-					<td>00001</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>					
+					<td><%= n.getN_no() %></td>
+					<td><%= n.getN_title() %></td>
+					<td><%= n.getN_date() %></td>	
+					<td><%= n.getN_count() %></td>				
 				</tr>
-				<tr>
-					<td>00002</td>
-					<td>[주문배송]새벽 배송에 문제가 발생했습니다.</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00003</td>
-					<td>[가격인상 공지] 호주산 오렌지 물량에 관해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00004</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00005</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00006</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00007</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00008</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00009</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
-				<tr>
-					<td>00010</td>
-					<td>[가격인상 공지] 사과 1개의 가격에 대해서</td>
-					<td>2020.10.26</td>
-				</tr>
+				<% } %>
 			</table>
 		<!--notice table End-->
 			

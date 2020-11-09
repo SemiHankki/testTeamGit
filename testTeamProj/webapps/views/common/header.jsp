@@ -72,9 +72,6 @@
 	height: 58px;
 	width: 160px;
 	font-size: 20px;
-	/*border-bottom: 1px solid black;
-	border-top: 1px solid black;
-	border-left: 1px solid black;*/
 }
 
 .dropdown-menu > li > a > p {
@@ -96,26 +93,14 @@
 }
 
 .dropdown-menu > li {
-	/*border: 2px solid green;*/
 	color: green;
 	background-color: lemon;
 	border: 1px solid green;	
 }
 
-<<<<<<< HEAD
-=======
-#adminPage {
-	position : absolute;
-	top : 0;
-	z-index : 1000000;
-}
-
->>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 </style>
 
 </head>
-
-
 <body>
    
 	<header class="main_menu_area">
@@ -132,11 +117,7 @@
 			<!-- top-right menu area -->
 			<div class="col-md-offset-8" id="headmenu">
 				<ul class="list-inline">
-<<<<<<< HEAD
 					<li><a href="<%=request.getContextPath()%>/views/member/signup.jsp">회원가입</a></li>
-=======
-					<li><a href="<%=request.getContextPath()%>/views/member/signUp.jsp">회원가입</a></li>
->>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 					<li><a href="<%=request.getContextPath()%>/views/member/loginForm.jsp">로그인</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/order/orderList.jsp">주문배송</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/notice/noticeList.jsp">고객센터</a></li>
@@ -152,59 +133,36 @@
 			<div class="container" id="nav_container">
 
 				<div class="col-xs-2" id="dropdown_category">
-					<a class="dropdown-toggle" data-toggle="dropdown">
+					<a class="category_dropmenu dropdown-toggle" data-toggle="dropdown">
 					<img src="<%=request.getContextPath()%>/resources/images/three_line.png" 
 					     width="20px" height="20px" style="margin-bottom: 5px; margin-right: 10px;">카테고리</a>
 
-					<ul class="dropdown-menu" role="menu"> 
+					<ul class="dropdown_item dropdown-menu" role="menu"> 
 						<li><a href="<%=request.getContextPath()%>/views/product/fruit.jsp"><p>과일류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/vegetable.jsp"><p>채소류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/meat.jsp"><p>육류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/fish.jsp"><p>해산물류</p></a></li>
 						<li><a href="<%=request.getContextPath()%>/views/product/easy_cook.jsp"><p>간편식</p></a></li>
-						<li><a href="<%=request.getContextPath()%>/views/product/meal_kit.jsp"><p>밀키트</p></a></li>
-					
-						<!-- <li><a href="#">간편식/밀키트</a></li> -->
-						
+						<li><a href="<%=request.getContextPath()%>/views/product/meal_kit.jsp"><p>밀키트</p></a></li>		
 					</ul>
 				</div>
-<<<<<<< HEAD
 
 				<script>
 					$(document).ready(function() {
-						$('.dropdown-toggle').mouseover(function() {
-							$('.dropdown-menu').show();
+						$('.category_dropmenu').mouseover(function() {
+							$('.dropdown_item').show();
 						})
 
-						$('.dropdown-toggle').mouseout(function() {
+						$('.category_dropmenu').mouseout(function() {
 							t = setTimeout(function() {
-								$('.dropdown-menu').hide();
+								$('.dropdown_item').hide();
 							}, 100);
 
-							$('.dropdown-menu').on('mouseenter', function() {
-								$('.dropdown-menu').show();
+							$('.dropdown_item').on('mouseenter', function() {
+								$('.dropdown_item').show();
 								clearTimeout(t);
 							}).on('mouseleave', function() {
-								$('.dropdown-menu').hide();
-=======
-				
-				<script>
-					$(document).ready(function() {
-						$('.dropdown_category').mouseover(function() {
-							$('.dropdown-menu').show();
-						})
-
-						$('.dropdown_category').mouseout(function() {
-							t = setTimeout(function() {
-								$('.category_menu').hide();
-							}, 100);
-
-							$('.category_menu').on('mouseenter', function() {
-								$('.category_menu').show();
-								clearTimeout(t);
-							}).on('mouseleave', function() {
-								$('.category_menu').hide();
->>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
+								$('.dropdown_item').hide();
 							})
 						})
 					})
@@ -234,10 +192,6 @@
 		</div>
 
 	</header>
-	<button id="adminPage" class="btn btn-warning btn-md"
-	onclick="location.href='<%= request.getContextPath() %>/views/admin/User/UserManage.jsp'">관리자 페이지로 이동</button>
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br />
-	
+
 </body>
 </html>
