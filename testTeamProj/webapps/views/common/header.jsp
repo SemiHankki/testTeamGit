@@ -102,6 +102,15 @@
 	border: 1px solid green;	
 }
 
+<<<<<<< HEAD
+=======
+#adminPage {
+	position : absolute;
+	top : 0;
+	z-index : 1000000;
+}
+
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 </style>
 
 </head>
@@ -123,7 +132,11 @@
 			<!-- top-right menu area -->
 			<div class="col-md-offset-8" id="headmenu">
 				<ul class="list-inline">
+<<<<<<< HEAD
 					<li><a href="<%=request.getContextPath()%>/views/member/signup.jsp">회원가입</a></li>
+=======
+					<li><a href="<%=request.getContextPath()%>/views/member/signUp.jsp">회원가입</a></li>
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 					<li><a href="<%=request.getContextPath()%>/views/member/loginForm.jsp">로그인</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/order/orderList.jsp">주문배송</a></li>
 					<li><a href="<%=request.getContextPath()%>/views/notice/noticeList.jsp">고객센터</a></li>
@@ -155,6 +168,7 @@
 						
 					</ul>
 				</div>
+<<<<<<< HEAD
 
 				<script>
 					$(document).ready(function() {
@@ -172,6 +186,25 @@
 								clearTimeout(t);
 							}).on('mouseleave', function() {
 								$('.dropdown-menu').hide();
+=======
+				
+				<script>
+					$(document).ready(function() {
+						$('.dropdown_category').mouseover(function() {
+							$('.dropdown-menu').show();
+						})
+
+						$('.dropdown_category').mouseout(function() {
+							t = setTimeout(function() {
+								$('.category_menu').hide();
+							}, 100);
+
+							$('.category_menu').on('mouseenter', function() {
+								$('.category_menu').show();
+								clearTimeout(t);
+							}).on('mouseleave', function() {
+								$('.category_menu').hide();
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 							})
 						})
 					})
@@ -201,6 +234,10 @@
 		</div>
 
 	</header>
-
+	<button id="adminPage" class="btn btn-warning btn-md"
+	onclick="location.href='<%= request.getContextPath() %>/views/admin/User/UserManage.jsp'">관리자 페이지로 이동</button>
+	<br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br />
+	
 </body>
 </html>

@@ -20,7 +20,10 @@
 	margin-right: auto;
 	margin-top: auto;
 	padding: 40px 5px;
+<<<<<<< HEAD
 	padding-top: 230px;
+=======
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 	/*border:1px solid black;*/
 }
 

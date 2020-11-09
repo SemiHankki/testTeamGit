@@ -13,7 +13,10 @@
         margin : 1% 18%;
         width : 65%;
         height : auto;
+<<<<<<< HEAD
         padding-top: 0px;
+=======
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
     }
     
     #space_area {
@@ -198,6 +201,7 @@
 	<%@ include file="/views/common/adminMenu.jsp" %>
 	<hr>
 	
+<<<<<<< HEAD
 	<section>		
         <div class="col-xs-12" id="title_content">
 				<div class="col-xs-2" id="title">
@@ -235,12 +239,39 @@
 					</div>
 					<br><br>
 					 <div>
+=======
+	<hr>
+	
+	<section>
+        <div id="title_bar">
+            <div id="title">
+                <strong style="font-size: x-large;">광고 관리</strong>
+            </div>
+            <ul>
+                <li><input type="checkbox" id="ad_no">광고번호</li>
+                <li><input type="checkbox" id="ad_name">광고명</li>
+                <li><input type="text" id="ad_search"><input type="submit" value="검색"></li>
+            </ul>
+        </div>
+        <div id="ad_content1">
+            <p>No.1</p>
+            <div id="ad1_box">
+                <div id="ad1_img_box">
+                    <img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png">
+                    <div id="ad1_selct_box">
+                        <p><input type="checkbox" id="ad1_select">&nbsp;광고 선택</p>
+                    </div>
+                </div>
+                <br>
+                <div>
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 				          법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.
 				          헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.
 				          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다.
 				          국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
                      </div>
                 </div>
+<<<<<<< HEAD
            </div>
 
              <br>
@@ -264,6 +295,19 @@
 				          제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다.
 				          국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
                      </div>
+=======
+            </div>
+        </div>
+        
+        <div id="ad_content2">
+            <p>No.2</p>
+            <div id="ad2_box">
+                <div id="ad2_img_box">
+                    <img src="<%=request.getContextPath()%>/resources/images/sample_images_02.png">
+                    <div id="ad2_selct_box">
+                        <p><input type="checkbox" id="ad2_select">&nbsp;광고 선택</p>
+                    </div>
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
                 </div>
            </div>
        
@@ -302,7 +346,23 @@
             <!--paging End-->
         <br><br><br><br>
         <hr>
+<<<<<<< HEAD
 		
+=======
+        <div class="row">
+		<div class="col-md-7 col-md-offset-2" style="text-align : center">
+			<button><<</button>
+			<button><</button>
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>4</button>
+			<button>5</button>
+			<button>></button>
+			<button>>></button>
+		</div>
+	</div>
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
     </section>
 
 </body>

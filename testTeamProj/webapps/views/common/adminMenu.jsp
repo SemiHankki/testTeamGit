@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -13,8 +15,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style>
+<<<<<<< HEAD
+=======
+	div#nav-box {
+		margin : 10% 10%;
+        padding: 0;
+        font-family: "맑은 고딕";
+        font-size: 0.9em;
+        width : 200px;
+        position : absolute;
+    }
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 
 
+<<<<<<< HEAD
  li.group div.title {
      height: 35px;
      line-height: 35px;
@@ -100,6 +114,15 @@
 	top: 100px;
 	right: 10px;
 }
+=======
+    ul#navi,
+    ul#navi ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border : 1px double black;
+    }
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 
 #admin_menu_area > table{
     width: 180px;
@@ -114,13 +137,13 @@
 </style>
 </head>
 <body>
-
 	    <div id="head-box">
          <div id="top_bar">
             <ul>
-                <li><a href="#">관리자 페이지</a></li>
+                <li><a href="<%= request.getContextPath() %>/index.jsp">관리자 페이지 나가기</a></li>
                 <li><a href="#">로그아웃</a></li>
             </ul>
+<<<<<<< HEAD
          </div>
             <div class="col-md-2 col-md-offset-5" id="logojpg" style="text-align: center;">
 				<a href="<%=request.getContextPath()%>"><img
@@ -182,6 +205,32 @@
         </ul>
     </div>
 	-->
+=======
+        </div>
+        <div style="text-align:center;">
+	        <a href="<%=request.getContextPath()%>">
+	        	<img src="<%=request.getContextPath()%>/resources/images/final_logo.JPG"
+	        	 height="140px" width="190px">
+			</a>
+		</div>
+    </div>
+    <div class="row">
+	    <div id="nav-box" class="col-md-1 col-md-offset-1">
+	        <ul id="navi">
+	            <ul class="sub">
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/User/UserManage.jsp">회원 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/Product/product_manage.jsp">상품 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/Recipe/recipe_Manage.jsp">레시피 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/Advertise/AD_Manage.jsp">광고 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/Event/EventManage.jsp">이벤트 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="#">공지 사항 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/QA/QA_Manage.jsp">Q&A 관리</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/views/admin/Question/Q_Manage.jsp">자주묻는 질문 관리</a></li>
+	            </ul>
+	        </ul>
+	    </div>
+	</div>
+>>>>>>> branch 'develop' of https://github.com/SemiHankki/testTeamGit.git
 </body>
 </html>
 
