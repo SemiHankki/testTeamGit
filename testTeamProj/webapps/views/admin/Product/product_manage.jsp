@@ -200,7 +200,7 @@ section {
 				<div class="col-xs-12" id="button_area">
 				        <br>
 					    <div style="float: right;">
-						<button type="button" class="btn btn-success btn-lg">등록</button>
+						<button type="button" onclick="productAdd()" class="btn btn-success btn-lg">등록</button>
 				
 				
 						<button type="button" class="btn btn-warning btn-lg">수정</button>
@@ -231,6 +231,12 @@ section {
 	<div class="col-xs-12" id="space_area"></div>
 	
  </section>
+ 
+ <script>
+ 	function productAdd() {
+ 		location.href="product_add.jsp";
+ 	}
+ </script>
 
 </body>
 </html>

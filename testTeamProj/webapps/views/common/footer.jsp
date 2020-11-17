@@ -2,6 +2,14 @@
     pageEncoding="UTF-8"%>
     
     <style>
+    
+      @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
     	.categories_widget ul li {
     		width : 150px;
     	}
@@ -24,7 +32,7 @@
     	background-color: rgb(22, 18, 39);
     	}
     	
-    	footer {color: white;}
+    	footer {color: white; font-family: 'InfinitySans-RegularA1';}
     	
     	.f_w_title>p>a {padding-right: 5px;}
     	

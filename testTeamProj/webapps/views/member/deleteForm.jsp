@@ -209,7 +209,8 @@ li strong {
 .rowarea {
   padding-top:250px;
   padding-right: 120px;
-  padding-left: 120px;    
+  padding-left: 120px;  
+  font-family: 'InfinitySans-RegularA1';  
 }
 
 .column_o {
@@ -263,6 +264,7 @@ li strong {
 #order_menu_area {
 	top: 550px;
 	left: 10px;
+	font-family: 'InfinitySans-RegularA1';
 }
 
 #order_menu_area > table{
@@ -291,6 +293,13 @@ button#cancel{  /*취소 버튼*/
    cursor: pointer;
    border: none;
    border-radius: 5px;
+}
+
+ @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 </style>
 </head>
@@ -362,13 +371,11 @@ button#cancel{  /*취소 버튼*/
     <!-- 상단 회색 박스 끝-->
 
  <div class="container">
-  <form action="/" method="post">
-
+<form id="updateForm" action="/Hankki/delete.me" method="post">
 <div class="div0">
    <div class="title">
    <h2>회원 탈퇴</h2>
    </div>
-   
 <div class="div1">
       <div class="div2">
          <label for="id" class=member>회원 탈퇴 안내</label>
@@ -418,8 +425,8 @@ button#cancel{  /*취소 버튼*/
       </div>
   </div>      
     <div class=div4>
-     <button type="submit" id="ok">확인</button>
-     <button type="submit" id="cancel">취소</button>
+     <button type="submit" id="ok" onclick="deleteMember();">확인</button>
+     <button type="submit" id="cancel" onclick="location.href='<%=request.getContextPath()%>/index.jsp'">취소</button>
  	</div>   
  </form>
 </div>

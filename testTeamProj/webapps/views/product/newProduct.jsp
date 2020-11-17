@@ -7,6 +7,16 @@
 <title>신상품</title>
 
 <style>
+
+ @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {font-family: 'InfinitySans-RegularA1';}
+
 header {
 	height: 230px;
 }
@@ -19,9 +29,18 @@ header {
 	height: 20px;
 }
 
+#aside{
+
+position : absolute;
+position : fixed;
+left : 100px;
+
+}
+
 /*side bar*/
 #aside_table{
 	width: 110px;
+	font-family: 'InfinitySans-RegularA1';
 }
 
 
@@ -122,7 +141,7 @@ header {
 	<br />	
 	<!-- right-side fixed bar -->
 	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
-		<a href="#">
+		<a href="<%= request.getContextPath()%>/views/delivery/greenDelivery.jsp">
 			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
 		</a>
 		
@@ -152,7 +171,7 @@ header {
 
 	<div class="container" id="product_search">
 
-	<div class="row">
+	<div class="row" style="font-family: 'InfinitySans-RegularA1';">
 		<div class="col-xs-12" id="header_text">
 			<h1>남김없이 한끼 신상품</h1>
 			<br />
@@ -184,9 +203,12 @@ header {
 		</div>
 
 			<div class="col-xs-4">
-				<a href="<%=request.getContextPath()%>/views/product/product_detail.jsp" class="thumbnail"
-				target="_blank">
-				 <img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
+				<a href="#" class="thumbnail"
+				  id="productinfo" >
+				 <img src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" 
+				 
+				 
+				 />
 				</a>
 				<div class="caption">
 					<h3>test caption1</h3>
@@ -194,8 +216,9 @@ header {
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_02.png" />
+				<a href="#" class="thumbnail"
+				id="productinfo2">
+				 <img src="<%=request.getContextPath()%>/resources/images/sample_images_02.png" />
 				</a>
 				<div class="caption">
 					<h3>test caption2</h3>
@@ -203,8 +226,8 @@ header {
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<a href="#" class="thumbnail"> <img
-					src="<%=request.getContextPath()%>/resources/images/sample_images_03.png" />
+				<a href="#" class="thumbnail" id="productinfo3"> 
+				<img src="<%=request.getContextPath()%>/resources/images/sample_images_03.png" />
 				</a>
 				<div class="caption">
 					<h3>test caption3</h3>
@@ -267,5 +290,99 @@ header {
 	<footer>
 		<%@ include file="../common/footer.jsp"%>
 	</footer>
+	<script>
+// 	var httpRequest;
+// 	function getHttpRequest(){
+		
+// 		if(window.ActiveXObject){
+			
+// 			try {
+// 				return new ActiveXObject("Msxml2.XMLHTTP");
+// 			} catch(e1) {
+// 				return new ActiveXObject("Microsoft.XMLHTTP");
+// 			}
+// 		} else if(window.XMLHttpRequest) {
+// 			return new XMLHttpRequest();
+// 		} else {
+// 			return null;
+// 		}
+		
+		
+// 	}
+// 	function productinfo(){
+		
+// 		httpRequest=getHttpRequest();
+		
+// // 		console.log("여기까지 됬나?")
+		
+// 		httpRequest.open("get","/Hankki/productinfo.me?no="+1,true);
+// 		console.log("여기까진 됬나?")
+// 		httpRequest.onreadystatechange=function(){
+			
+// 			if(httpRequest.readystate==4 && httpRequest.status==200){
+				
+// 				console.log('ajax성공');
+				
+// 			}
+			
+// 		}
+		
+// 		httpRequest.send();
+		
+// 	};
+// 	console.log("스크립트는 실행됨");
+	
+	$('#productinfo').on('click',function(){
+		
+		$.ajax({
+ 			url : '/Hankki/productinfo.me',
+ 			type : 'get',
+ 			data : {no : 1},
+ 			success : function() {
+				console.log("성공!!");
+				
+				$(location).attr("href", "/Hankki/views/product/product_detail.jsp");
+				
+			},
+			
+			
+		});
+		
+ 	});
+$('#productinfo2').on('click',function(){
+		
+		$.ajax({
+ 			url : '/Hankki/productinfo.me',
+ 			type : 'get',
+ 			data : {no : 2},
+ 			success : function() {
+				console.log("성공!!");
+				
+				$(location).attr("href", "/Hankki/views/product/product_detail.jsp");
+				
+			},
+			
+			
+		});
+		
+ 	});
+$('#productinfo3').on('click',function(){
+	
+	$.ajax({
+			url : '/Hankki/productinfo.me',
+			type : 'get',
+			data : {no : 3},
+			success : function() {
+			console.log("성공!!");
+			
+			$(location).attr("href", "/Hankki/views/product/product_detail.jsp");
+			
+		},
+		
+		
+	});
+	
+	});
+	</script>
 </body>
 </html>

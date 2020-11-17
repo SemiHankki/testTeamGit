@@ -10,9 +10,10 @@
 <style>
 
 .rowarea {
-  padding-top:250px;
+  padding-top:220px;
   padding-right: 120px;
-  padding-left: 120px;    
+  padding-left: 120px; 
+  font-family: 'InfinitySans-RegularA1';   
 }
 
 .column_o {
@@ -60,8 +61,6 @@
   border-radius: 5px;
   height: 20px; 
   text-align: center;
-  margin-bottom: 5px;
-  margin-top: 5px;
 }
 
 .button_t2 {
@@ -86,19 +85,19 @@
   height: auto;
   margin-left:auto;
   margin-right:auto;
-  padding : 20px 0px;		
+  padding : 20px 0px;      
 }
 
 #userTable tr td {text-align : center;}
-	
+   
 #thead {background : #E2E2E2;}
-	
+   
 #userTable tr {
   border-bottom : 1px solid black;
   height : 40px;
   cursor : pointer;
 }
-	
+   
 .outer{
   width:800px;
   height: 500px;
@@ -106,9 +105,9 @@
   color:black;
   margin-left:auto;
   margin-right:auto;
-  margin-top:10px;
   padding : 40px 5px;
   padding-top: 10px;
+  
 }
 
 .table_top {float: left; display: inline-block;}
@@ -140,7 +139,7 @@
 
 
 #dropdown_area{
-	text-align: right;
+   text-align: right;
 }
 
 .dropdown-content a:hover, dropdown-menu a:hover {background-color: rgb(248,240,211);}
@@ -149,6 +148,29 @@
 
 .dropdown:hover .dropbtn {background-color: white;}
 
+/*side menu*/
+div#nav-box {
+    margin: 5% 10%;
+    padding: 0;
+    font-family: "맑은 고딕";
+    font-size: 0.9em;
+    width : 160px;
+    position : absolute;
+}
+
+ul#navi {
+    width: 160px;
+    text-indent: 10px;
+    font-family: 'InfinitySans-RegularA1';
+}
+
+ul#navi,
+ul#navi ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border : 1px solid black;
+}
 
 li.group div.title {
     height: 35px;
@@ -186,56 +208,23 @@ li strong {
     float: right;
 }
 
-/*left-side menu*/
-#order_menu_area{
-	top: 530px;
-	left: 10px;
+  @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-
-#order_menu_area > table{
-	width: 180px;
-	border: 2px solid black;
-}
-
 </style>
 
 <body>
     <%@ include file="../common/header.jsp"%>
-
-    <!-- left-side menu -->
-    <div class="col-xs-1 col-xs-offset-1" id="order_menu_area">
-				<table class="table table-hover" id="order_menu">
-					<tr>
-						<td>주문 내역</td>
-					</tr>
-					<tr>
-						<td>상품 후기</td>
-					</tr>
-					<tr>
-						<td>상품 문의</td>
-					</tr>
-					<tr>
-						<td>적립금</td>
-					</tr>
-					<tr>
-						<td>쿠폰</td>
-					</tr>
-					<tr>
-						<td>개인정보 수정</td>
-					</tr>
-					<tr>
-						<td>회원 탈퇴</td>
-					</tr>
-				</table>
-			</div>
-	<!-- left-side menu End -->
 
     <!-- 상단 회색 박스 -->
     <div class="container">
     <div class="rowarea">
       <div class="column_o" style="background-color:lightgray;">
       <div class="row">
-      	<h3 align="center">________ 님</h3>
+         <h3 align="center">________ 님</h3>
           <br>
           <h4 align="center">적립 0%</h4>
           <br>
@@ -265,61 +254,75 @@ li strong {
     </div>
     <!-- 상단 회색 박스 끝-->
     
+     <div id="nav-box">
+        <ul id="navi">
+            <ul class="sub">
+                <li><strong>>&nbsp;</strong><a href="#">주문 내역</a></li>
+                <li><strong>>&nbsp;</strong><a href="#">상품 후기</a></li>
+                <li><strong>>&nbsp;</strong><a href="#">상품 문의</a></li>
+                <li><strong>>&nbsp;</strong><a href="#">적립금</a></li>
+                <li><strong>>&nbsp;</strong><a href="#">쿠폰</a></li>
+                <li><strong>>&nbsp;</strong><a href="../member/updateForm.jsp">개인정보 수정</a></li>
+                <li><strong>>&nbsp;</strong><a href="../member/deleteForm.jsp">회원 탈퇴</a></li>
+            </ul>
+        </ul>
+     </div>
+    
     <br><br>
-    <div class="outer">
+    <div class="outer" style="font-family: 'InfinitySans-RegularA1';">
     
         <!-- sidebar dropdown -->
-         	<div class="dropdown">
-  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
-    				전체기간 <span class="caret"></span>
-  				</button>
-  			
-  				<div class="dropdown-content" role="menu" aria-labelledby="dropdownMenu1">
-    				<a role="menuitem" href="#">일주일</a>
-    				<a role="menuitem" href="#">3개월</a>
-    				<a role="menuitem" href="#">6개월</a>
-    				<a role="menuitem" href="#">1년</a>
-    				<a role="menuitem" href="#">3년</a>
-  				</div>
-			</div>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
+                전체기간 <span class="caret"></span>
+              </button>
+           
+              <div class="dropdown-content" role="menu" aria-labelledby="dropdownMenu1">
+                <a role="menuitem" href="#">일주일</a>
+                <a role="menuitem" href="#">3개월</a>
+                <a role="menuitem" href="#">6개월</a>
+                <a role="menuitem" href="#">1년</a>
+                <a role="menuitem" href="#">3년</a>
+              </div>
+         </div>
         <!-- End sidebar dropdown -->
  
         <!-- Order table -->
         <div class="table_top">
-		   <h2 align="left">주문내역 </h2><p>지난 3년간의 주문 내역 조회가 가능합니다.</p>	   
-		</div>
+         <h2 align="left">주문내역 </h2><p>지난 3년간의 주문 내역 조회가 가능합니다.</p>      
+      </div>
        <div class="row">
        <div class="col-md-3"></div>
        <div class="table">
-       	  <table class="table table-hover" id="userTable">
-       		 <tr id="thead">
-       			<td>주문일(결제번호)</td>
-       			<td>상품명 / 주문옵션 / 주문번호</td>
-       			<td>주문상태</td>
-       			
-       		 </tr>
-       		 <tr>
-       			<td>2020-10-25 <br> 000000000</td>
-       			<td>테스트 상품1 <br> 수량 1개 <br> 주문번호: 000000000</td>
-       			<td>결제 완료 <br>
-       			    <button class="button_t1" type="button" onclick="location.href='#' ">배송 조회</button><br>
-       			    <button class="button_t2" type="button" onclick="location.href='#' ">주문 취소</button>
-       			</td>
-       			
-       		 </tr>
-       		 
-       		 <tr>
-       			<td>2020-10-26 <br> 000000001</td>
-       			<td>테스트 상품2 <br> 수량 1개 <br> 주문번호: 000000001</td>
-       			<td>배송 완료 <br>
-       			    <button class="button_t1" type="button" onclick="location.href='#' ">구매 후기</button><br>
-       			    <button class="button_t2" type="button" onclick="location.href='#' ">반품/취소</button>
-       			</td>      			
-       		 </tr>
+            <table class="table table-hover" id="userTable">
+              <tr id="thead">
+                <td>주문일(결제번호)</td>
+                <td>상품명 / 주문옵션 / 주문번호</td>
+                <td>주문상태</td>
+                
+              </tr>
+              <tr>
+                <td>2020-10-25 <br> 000000000</td>
+                <td>테스트 상품1 <br> 수량 1개 <br> 주문번호: 000000000</td>
+                <td>결제 완료 <br>
+                    <button class="button_t1" type="button" onclick="location.href='#' ">배송 조회</button><br>
+                    <button class="button_t2" type="button" onclick="location.href='#' ">주문 취소</button>
+                </td>
+                
+              </tr>
+              
+              <tr>
+                <td>2020-10-26 <br> 000000001</td>
+                <td>테스트 상품2 <br> 수량 1개 <br> 주문번호: 000000001</td>
+                <td>배송 완료 <br>
+                    <button class="button_t1" type="button" onclick="location.href='#' ">구매 후기</button><br>
+                    <button class="button_t2" type="button" onclick="location.href='#' ">반품/취소</button>
+                </td>               
+              </tr>
            </table>
        </div>
        <!-- Order table -->   
-	  </div>
+     </div>
     </div>
     
     

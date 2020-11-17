@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.kh.jsp.question.model.vo.*"%>
+<% Question qu = (Question)request.getAttribute("question"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
 							</select>
 						</div>
 						<div style="padding : 5px;">
-							제목 : <input type="text" style="width : 94%;"/>
+							제목 : <input type="text" style="width : 94%;" value="<%= qu.getQ_title()%>"/>
 						</div>
 						<hr />
 						<div>
@@ -46,8 +47,8 @@
 						</div>
 					</div>
 					<div style="text-align : center;">
-						<button class="btn btn-success btn-sm"  onclick="location.href='Q_Manage.jsp'">수정하기</button> &nbsp;
-						<button class="btn btn-danger btn-sm"  onclick="location.href='Q_Manage.jsp'">취소하기</button>
+						<button class="btn btn-success btn-sm"  onclick="complete();">수정하기</button> &nbsp;
+						<button class="btn btn-danger btn-sm"  onclick="deleteNotice();">취소하기</button>
 					</div>
 				</div>
 			</div>
@@ -55,5 +56,16 @@
 	</div>
 	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
+     <script>
+		function complete(){
+			$("#updateForm").attr("action","<%=request.getContextPath() %>/qUpdate.qu");
+			
+		}
+	
+		function deleteNotice(){
+			$("#updateForm").attr("action","<%=request.getContextPath() %>/qDelete.qu");
+		}
+		
+	</script>
 </body>
 </html>

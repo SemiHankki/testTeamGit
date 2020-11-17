@@ -6,22 +6,19 @@
 <meta charset="UTF-8">
 <title>남김 없이 한끼</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">           
-<link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>-->
 
 <style>
 
-/*@font-face {
-font-family:"NanumSquare_acB";
-/*src: url(./images/NanumGothic.eot);*/
-/*src: local("나눔 스퀘어"), url(resources/fonts/NanumSquare_acB.ttf) format("ttf");
+  @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-*/
 
 body, h3, h4, p {
-	font-family: 'Noto Sans KR', sans-serif;
+	 font-family: 'InfinitySans-RegularA1';
 	}
 
 header {
@@ -49,7 +46,7 @@ header {
 #new_p {
     font-size: 30px;
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'InfinitySans-RegularA1';
 }
 
 #s_button {
@@ -73,7 +70,17 @@ header {
   position: fixed;
 }
 
+
 /*side bar*/
+
+#aside{
+
+position : absolute;
+left : 100px;
+position: fixed;
+
+}
+
 #aside_table{
 	width: 110px;
 }
@@ -117,8 +124,8 @@ header {
 	
 	<br />	
 	<!-- right-side fixed bar -->
-	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
-		<a href="#">
+	<div class="col-xs-1 col-xs-offset-10 affix" id="aside" style=" font-family: 'InfinitySans-RegularA1';">
+		<a href="<%= request.getContextPath()%>/views/delivery/greenDelivery.jsp">
 			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
 		</a>
 		
@@ -131,7 +138,7 @@ header {
 			</tr>
 			<tr>
 				<td id="row2">
-					<a href="<%= request.getContextPath()%>/views/recipe/recipeList.jsp">레시피</a>
+					<a href="<%= request.getContextPath()%>/views/recipe/recipeList2.jsp">레시피</a>
 				</td>
 			</tr>
 			<tr>
@@ -190,7 +197,7 @@ header {
 	<!-- Advertisement End-->
 	
 	<!-- New Products -->
-	<div class="container">
+	<div class="container" style=" font-family: 'InfinitySans-RegularA1';">
 		<div class="row">
 		   <div>
 		      <p id="new_p">새로운 상품</p>
@@ -199,7 +206,7 @@ header {
 				<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/resources/images/salmon.PNG" />
 				</a>
 				<div class="caption">
-					<h3 align="center">[우리밀키트]깔끔 연어구이</h3>
+					<h3 align="center">[우리밀키트] 깔끔 연어구이</h3>
 					<h4 align="center">영양 만점 훈제향 연어</h4>
 					<a href="#"><img id="s_button" src="<%=request.getContextPath()%>/resources/images/shopping_cart.png" width="20px" height="20px"></a>
 				</div>
@@ -208,7 +215,7 @@ header {
 				<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/resources/images/steak.PNG" />
 				</a>
 				<div class="caption">
-					<h3 align="center">[우리밀키트]간편 스테이크</h3>
+					<h3 align="center">[우리밀키트] 간편 스테이크</h3>
 					<h4 align="center">숯불구이향 저녁 만찬</h4>
 					<a href="#"><img id="s_button" src="<%=request.getContextPath()%>/resources/images/shopping_cart.png" width="20px" height="20px"></a>
 				</div>
@@ -217,7 +224,7 @@ header {
 				<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/resources/images/chicken.PNG" />
 				</a>
 				<div class="caption">
-					<h3 align="center">[우리밀키트]매콤 닭요리</h3>
+					<h3 align="center">[우리밀키트] 매콤 닭요리</h3>
 					<h4 align="center">속 편안한 양념 치킨</h4>
 					<a href="#"><img id="s_button" src="<%=request.getContextPath()%>/resources/images/shopping_cart.png" width="20px" height="20px"></a>
 				</div>
@@ -243,7 +250,7 @@ header {
 			</ol>
 
 			<!-- Wrapper for slides -->
-			<div class="carousel-inner" id="carousel-inner2" role="listbox">
+			<div class="carousel-inner" id="carousel-inner2" role="listbox" style=" font-family: 'InfinitySans-RegularA1';">
 				<div class="item active">
 					<img src="<%=request.getContextPath()%>/resources/images/meat.jpg">
 					<div class="carousel-caption">
@@ -291,7 +298,7 @@ header {
 	    <!-- Three steps -->
 	    <div class="container">
                 <div class="c_feature_box">
-                    <div class="row">
+                    <div class="row" style=" font-family: 'InfinitySans-RegularA1';">
                         <div class="col-lg-4">
                             <div class="c_box_item">
                                 <p align="center"><img alt="number" src="<%=request.getContextPath()%>/resources/images/step_1.png" width="70px" height="70px"></p>
@@ -319,7 +326,7 @@ header {
 	         <!-- Three steps End-->
 	
 	<div class="container">
-		<br /><br /><br /><br /><br />
+		<br /><br /><br /><br />
 	</div>	
 
 	<!-- four pictures -->
@@ -327,7 +334,7 @@ header {
 	  <div>
           <p id="new_p">알뜰 식재료</p>               
       </div>
-		<div class="row">
+		<div class="row" style=" font-family: 'InfinitySans-RegularA1';">
 			<div class="col-sm-5 col-md-3">
 				<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/resources/images/fruits.PNG" />
 				</a>
@@ -367,7 +374,7 @@ header {
 	 <!-- top_button End-->
 	
 	<div class="container">
-		<br /><br /><br /><br /><br />
+		<br /><br /><br /><br />
 	</div>	
 	
 	<!-- Footer -->
@@ -385,7 +392,7 @@ header {
 	window.onscroll = function() {scrollFunction()};
 
 	function scrollFunction() {
-	  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
 	    mybutton.style.display = "block";
 	  } else {
 	    mybutton.style.display = "none";

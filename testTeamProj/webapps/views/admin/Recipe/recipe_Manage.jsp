@@ -186,7 +186,7 @@ section {
 				<div class="col-xs-10" id="button_area">
 				        <br>
 					    <div style="float: right; padding-right: 70px;">
-						<button type="button" class="btn btn-success btn-lg">등록</button>
+						<button type="button" class="btn btn-success btn-lg" onclick="location.href='<%=request.getContextPath()%>/Insert.r'">등록</button>
 				
 				
 						<button type="button" class="btn btn-warning btn-lg">수정</button>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="com.kh.jsp.product.model.vo.*"%>
+<% Product p = (Product)session.getAttribute("product");  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,13 @@
 <title>상품 상세 조회</title>
 
 <style>
+
+ @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 header {
 	height: 230px;
 }
@@ -18,7 +26,7 @@ header {
 	max-height: 450px;
 }
 
-#product_count {
+.product_count {
 	width: 45px;
 	text-align: center;
 }
@@ -91,8 +99,17 @@ thead > tr > th{
 	text-align: right;
 }
 
+#aside{
+
+position : absolute;
+position : fixed;
+left : 100px;
+
+}
+
 #aside_table{
 	width: 110px;
+	font-family: 'InfinitySans-RegularA1';
 }
 
 
@@ -178,6 +195,20 @@ thead > tr > th{
 	background-color: #ddd;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+   
+
+}
+input[type=number] {
+     line-height: 30px;
+}
+
+
+.container {font-family: 'InfinitySans-RegularA1';}
+
 </style>
 </head>
 
@@ -189,7 +220,7 @@ thead > tr > th{
 	
 	<!-- left-side fixed bar -->
 	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
-		<a href="#">
+		<a href="<%= request.getContextPath()%>/views/delivery/greenDelivery.jsp">
 			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
 		</a>
 		
@@ -216,7 +247,7 @@ thead > tr > th{
 	<!-- left-side fixed bar End-->
 	
 	<div class="container">
-		<div class="row">
+		<div class="row" style="font-family: 'InfinitySans-RegularA1';">
 			<div class="col-xs-6" id="picture_area">
 				<img id="product_picture"
 					src="<%=request.getContextPath()%>/resources/images/sample_images_01.png" />
@@ -227,17 +258,17 @@ thead > tr > th{
 					<h3>[브랜드명]</h3>
 				</div>
 				<div class="col-xs-6">
-					<h3>상품 명</h3>
+					<h3><%= p.getP_name() %></h3>
 				</div>
 				<div class="col-xs-2" id="icon_space">
 					<span class="glyphicon glyphicon-heart-empty" id="heart_icon"></span>
 				</div>
 				
 				<div class="col-xs-4">
-					<h4>상품 설명</h4>
+					<h4></h4>
 				</div>
 				<div class="col-xs-6">
-					<h4>상품 설명 상세 내용</h4>
+					<h4><%= p.getP_explain() %></h4>
 				</div>
 				<div class="col-xs-2" >
 					<a href="#" style="text-decoration: none; color:black;">
@@ -246,13 +277,13 @@ thead > tr > th{
 				</div>
 			
 				<div class="col-xs-3" id="product_price">
-					<h3>15000원</h3>
+					<h3 id="count"></h3>
 				</div>
 				<div class="col-xs-2" style="color:red;" id="product_dc">
 					<h3>50%</h3>
 				</div>
 				<div class="col-xs-7" style="color:grey;" id="original_price">
-					<h4>30000
+					<h4><%= p.getP_price() %>원
 						<span class="glyphicon glyphicon-question-sign"></span>
 					</h4>
 					
@@ -274,7 +305,7 @@ thead > tr > th{
 					<h4>중량/용량</h4>
 				</div>
 				<div class="col-xs-8">
-					<h4>0g X 수량</h4>
+					<h4><%= p.getP_weight() %></h4>
 				</div>
 
 				<div class="col-xs-4">
@@ -305,9 +336,11 @@ thead > tr > th{
 					<h4>구매수량</h4>
 				</div>
 				<div class="col-xs-8">
-					<button type="button" class="btn btn-secondary">-</button>
-					<input type="text" id="product_count" value="1" disabled />
-					<button type="button" class="btn btn-secondary">+</button>
+<!-- 					<button type="button" class="btn btn-secondary">-</button> -->
+					<input type="number" max="100" min="1" step="1"
+					 value ="1" id="product_count" style="width:50px
+					 class="product_count"/>
+<!-- 					<button type="button" class="btn btn-secondary">+</button> -->
 				</div>
 			</div>
 		</div>
@@ -317,27 +350,38 @@ thead > tr > th{
 		</div>
 
 		<div class="col-xs-12" id="total_price_area">
-			<h3> 총 상품 금액 : 0 원 </h3>
-			<h5> 로그인 후, 회원 할인가와 적립혜택 제공</h5>
+			
 			<br />
 		</div>
-
-		<div class="col-xs-12" id="button_area">
-			<button type="button" class="btn btn-light btn-lg">장바구니</button>
-			<button type="button" class="btn btn-success btn-lg">구매하기</button>
-			<br />
-		</div>
+<%  if(m==null){ %>
+	
+	<div class="col-xs-12" id="button_area">
+	<button type="button" class="btn btn-light btn-lg"
+	 onclick="location.href='/Hankki/views/shoppingCart/shopping_cart.jsp'">장바구니</button>
+	<button type="button" class="btn btn-success btn-lg" onclick="loginUp()">구매하기</button>
+	<br />
+</div>
+	
+<% }else{  %>
+<div class="col-xs-12" id="button_area">
+	<button type="button" class="btn btn-light btn-lg"
+	 onclick="location.href='/Hankki/views/shoppingCart/shopping_cart.jsp'">장바구니</button>
+	<button type="button" class="btn btn-success btn-lg"
+	 onclick="location.href='/Hankki/views/order/order.jsp'">구매하기</button>
+	<br />
+</div>
+<%		}%>
 		
 		<div class="col-xs-12" id="space_area1">
 		</div>
 	</div>
 	
 	<div class="container" id="container2">
-		<div class="row">
+		<div class="row" style="font-family: 'InfinitySans-RegularA1';">
 			<ul class="nav nav-tabs">
   				<li role="presentation" class="active"><a href="#">상품 상세 정보</a></li>
-  				<li role="presentation"><a href="#">고객후기</a></li>
-  				<li role="presentation"><a href="#">상품문의</a></li>
+  				<li role="presentation"><a href="#review">고객후기</a></li>
+  				<li role="presentation"><a href="#qa">상품문의</a></li>
 			</ul>		
 			<br />
 		</div>
@@ -362,16 +406,16 @@ thead > tr > th{
 		
 		<div class="col-xs-12" id="picture_space"><br /><br /></div>
 		
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" >
   			<li role="presentation"><a href="#">상품 상세 정보</a></li>
-  			<li role="presentation" class="active"><a href="#">고객후기</a></li>
-  			<li role="presentation"><a href="#">상품문의</a></li>
+  			<li role="presentation" class="active"><a href="#review">고객후기</a></li>
+  			<li role="presentation"><a href="#qa">상품문의</a></li>
 		</ul>		
 		
 		<div class="col-xs-12" id="space_area2"> <br /></div>
 		
 		<div class="col-xs-12">
-			<p>PRODUCT REVIEW</p>
+			<p id="review">PRODUCT REVIEW</p>
 		</div>
 		<div class="col-xs-10" id="porduct_review_cotent">
 			<ul>
@@ -455,18 +499,18 @@ thead > tr > th{
 		
 		<div class="col-xs-12" id="space_area2"><br /></div>
 		
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" id="qa">
   			<li role="presentation"><a href="#">상품 상세 정보</a></li>
-  			<li role="presentation"><a href="#">고객후기</a></li>
-  			<li role="presentation"  class="active"><a href="#">상품문의</a></li>
+  			<li role="presentation"><a href="#review">고객후기</a></li>
+  			<li role="presentation"  class="active"><a href="#qa">상품문의</a></li>
 		</ul>		
 		
 		<div class="col-xs-12" id="space_area2"> <br /></div>
 		
 		<div class="col-xs-12">
-			<p>PRODUCT Q&A</p>
+			<p >PRODUCT Q&A</p>
 		</div>
-		<div class="col-xs-12" id="porduct_review_cotent">
+		<div class="col-xs-12" id="porduct_review_cotent" >
 			<ul>
 				<li>상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른 글은 사전 동의 없이 담당 게시판으로 이동될 수 있습니다.</li>
 				<li>배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 1:1문의에 남겨주세요.</li>
@@ -557,8 +601,39 @@ thead > tr > th{
 	  document.body.scrollTop = 0; // For Safari
 	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 	}
-	</script>
 	
+	
+	
+function loginUp(){
+	
+		window.alert("로그인이 필요합니다");
+		location.href="/Hankki/views/member/loginForm.jsp";
+
+		}
+	
+	var totalQuantity = <%=p.getP_amount()%>;
+	var price = <%=p.getP_price()%>;
+	var quantity = $("#product_count").val();
+	var totalPrice = price*quantity
+	var product_count = document.getElementById('product_count');
+	
+	product_count.addEventListener('click',function(){
+		
+		console.log(product_count.value);
+		
+	})
+	
+	$("input[type=number]").on("click",function(){
+		
+		console.log(price*quantity);
+		
+		$("#total_price_area").html()=price*quantity ;
+		
+		
+	})
+	
+	
+	</script>
 	
 
 </body>

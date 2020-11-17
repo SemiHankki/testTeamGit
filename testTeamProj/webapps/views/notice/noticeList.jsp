@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, com.kh.jsp.notice.model.vo.Notice" %>
 <% ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list"); %>
+
+<%@ page import="java.util.*, com.kh.jsp.qa.model.vo.Qa" %>
+<% ArrayList<Qa> list2 = (ArrayList<Qa>)request.getAttribute("list2"); %>
  
 <!DOCTYPE html>
 <html>
@@ -30,8 +33,10 @@
 	/*border:1px solid black;*/
 }
 
+ .container {font-family: 'InfinitySans-RegularA1';}
+
 .table {
-	width: 800px;
+	width: auto;	
 }
 
 .tableArea {
@@ -62,6 +67,7 @@
 
 #thead {
 	background: #E2E2E2;
+	text-align: center;
 }
 
 #userTable tr {
@@ -94,56 +100,70 @@
 	background-color: #ddd;
 }
 
-/*Table*/
-.lable_check {
-	padding-right: 30px !important;
-}
+div#nav-box {
+		margin : 10% 10%;
+        padding: 0;
+        font-family: "맑은 고딕";
+        font-size: 0.9em;
+        width : 200px;
+        position : absolute;
+    }
 
-li.group div.title {
-    height: 35px;
-    line-height: 35px;
-    background: #9ab92e;
-    cursor: pointer;
-}
+    ul#navi {
+        width: 150px;
+        text-indent: 10px;
+    }
 
-ul.sub li {
-    height: 35px;
-    line-height: 35px;
-    background: whitesmoke;;
-    cursor: pointer;
-}
+    ul#navi,
+    ul#navi ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border : 1px double black;
+    }
 
-ul.sub li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: #000;
-}
+    li.group div.title {
+        height: 35px;
+        line-height: 35px;
+        background: #9ab92e;
+        cursor: pointer;
+    }
 
-ul.sub li:hover {
-    background: gray;
-    transition-duration: 0.5s;
-}
+    ul.sub li {
+        height: 35px;
+        line-height: 35px;
+        background: whitesmoke;;
+        cursor: pointer;
+    }
 
-ul.sub li:hover a {
-    color : white;
-    transition-duration: 0.5s;
-}
+    ul.sub li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #000;
+        font-family: 'InfinitySans-RegularA1';
+    }
 
-li strong {
-    float: right;
-}
+    ul.sub li:hover {
+        background: gray;
+        transition-duration: 0.5s;
+    }
 
-/*left-side menu*/
-#order_menu_area{
-	top: 280px;
-	left: 10px;
-}
+    ul.sub li:hover a {
+        color : white;
+        transition-duration: 0.5s;
+    }
 
-#order_menu_area > table{
-	width: 180px;
-	border: 2px solid black;
+    li strong {
+        float: right;
+    }
+    
+  @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 </style>
@@ -152,54 +172,62 @@ li strong {
 <body>
 
 	<%@ include file="../common/header.jsp"%>
-	
+     <br><br><br><br><br><br>    
+      
 	 <!-- left-side menu -->
-    <div class="col-xs-1 col-xs-offset-1" id="order_menu_area">
-				<table class="table table-hover" id="order_menu">
-					<tr>
-						<td>공지사항</td>
-					</tr>
-					<tr>
-						<td>자주하는 질문</td>
-					</tr>
-					<tr>
-						<td>1:1 문의</td>
-					</tr>
-				</table>
-			</div>
+	 
+	 <div class="container" style="display:grid; width: auto;">
+	 	
+    <div class="row">
+	    <div id="nav-box" class="col-md-1 col-md-offset-1">
+	        <ul id="navi">
+	            <ul class="sub">	               
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/SelectList.no">공지 사항</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/qSelectList.qu">자주 묻는 질문</a></li>
+	                <li><strong>>&nbsp;</strong><a href="<%= request.getContextPath() %>/SelectList.qa">1:1 문의</a></li>
+	            </ul>
+	        </ul>
+	    </div>
+	</div>
 	<!-- left-side menu End -->	
-	<!-- <a href="#">1:1 문의</a> -->
+	
     
 	<!--notice table-->
-	<div class="outer">
+	<div class="outer" style="margin-top : 50px;">
 		<br>		
+		<div class="row">
+		<div class="col-md-3"></div>
+		
 		<div id="table_top">
 		   <h2 align="left">공지사항 </h2><p>새로운 소식들과 유용한 정보들을 확인하세요.</p>	   
 		</div>
-				
-		<div class="row">
-		<div class="col-md-3"></div>
+		
 		<div class="table">
 			<table class="table table-hover" id="userTable">
 				<tr id="thead">
-					<th>번호</th>
-					<th width="300px">제목</th>
-					<th width="100px">작성일</th>
-					<th>조회수</th>					
+					<th style="text-align: center;">번호</th>
+					<th width="300px" style="text-align: center;">제목</th>
+					<th width="150px" style="text-align: center;">작성자</th>
+					<th width="150px" style="text-align: center;">작성일</th>
+					<th style="text-align: center;">조회수</th>					
 				</tr>
 				<% for(Notice n : list){ %>
 				<tr>
 					<td><%= n.getN_no() %></td>
 					<td><%= n.getN_title() %></td>
+					<td><%= n.getN_writer() %></td>
 					<td><%= n.getN_date() %></td>	
 					<td><%= n.getN_count() %></td>				
 				</tr>
 				<% } %>
 			</table>
 		<!--notice table End-->
+		
+		<br><br>
+	    </div>
 			
 		<!--paging-->	
-		</div>
+		
          <div class="col-md-12" id="pagination">
 		   <div class="pagination" style="text-align: center;">
             <a href="#">&laquo;</a>
@@ -231,8 +259,28 @@ li strong {
 		<!-- search condition End -->
        </div>
 	</div>
+</div>
+    <br><br>
+    
+    <script>  
+		$(function(){
+			
+			$("#userTable td").mouseenter(function(){
+				$(this).parent().css({"background":"rgb(248, 240, 211)", "cursor":"pointer"});
+			}).mouseout(function(){
+				$(this).parent().css({"background":"white"});
+			}).click(function(){
+				//console.log($(this).parent().children().eq(0).text());
+				var nno = $(this).parent().children().eq(0).text();
+				location.href="<%=request.getContextPath()%>/nSelectOne.no?nno=" + nno;
+			});
+		});
 		
-    <br><br><br><br>
+		function search(){
+			location.href="<%=request.getContextPath()%>/nSearch.no?con="+$('#searchCondition').val()+"&keyword="+$('#keyword').val();
+		}
+		
+	</script>
     <%@ include file="../common/footer.jsp"%>
 	
 </body>

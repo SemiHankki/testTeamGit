@@ -130,9 +130,9 @@ input{
 }
 
 .div3-1{ /*주소 첫 줄*/ 
-	width: 700px;
-	display : flex;
-	align-items : center;
+   width: 700px;
+   display : flex;
+   align-items : center;
 }
      
 .postsearch{ /*우편번호 찾기 버튼*/
@@ -237,14 +237,22 @@ li strong {
 /*left-side menu*/
 
 #order_menu_area {
-	top: 550px;
-	left: 10px;
+   top: 550px;
+   left: 10px;
+   font-family: 'InfinitySans-RegularA1';
 }
 
 #order_menu_area > table{
-	width: 180px;
-	border: 2px solid black;
+   width: 180px;
+   border: 2px solid black;
 }
+
+h4{
+   flex: 1px;
+   margin-left: -200px;
+}
+
+button, .container {font-family: 'InfinitySans-RegularA1';}
 
 
 </style>
@@ -256,38 +264,38 @@ li strong {
     
     <!-- left-side menu -->
     <div class="col-xs-1 col-xs-offset-1" id="order_menu_area">
-				<table class="table table-hover" id="order_menu">
-					<tr>
-						<td>주문 내역</td>
-					</tr>
-					<tr>
-						<td>상품 후기</td>
-					</tr>
-					<tr>
-						<td>상품 문의</td>
-					</tr>
-					<tr>
-						<td>적립금</td>
-					</tr>
-					<tr>
-						<td>쿠폰</td>
-					</tr>
-					<tr>
-						<td>개인정보 수정</td>
-					</tr>
-					<tr>
-						<td>회원 탈퇴</td>
-					</tr>
-				</table>
-			</div>
-	<!-- left-side menu End -->
-	
+            <table class="table table-hover" id="order_menu">
+               <tr>
+                  <td>주문 내역</td>
+               </tr>
+               <tr>
+                  <td>상품 후기</td>
+               </tr>
+               <tr>
+                  <td>상품 문의</td>
+               </tr>
+               <tr>
+                  <td>적립금</td>
+               </tr>
+               <tr>
+                  <td>쿠폰</td>
+               </tr>
+               <tr>
+                  <td>개인정보 수정</td>
+               </tr>
+               <tr>
+                  <td>회원 탈퇴</td>
+               </tr>
+            </table>
+         </div>
+   <!-- left-side menu End -->
+   
      <!-- 상단 회색 박스 -->
     <div class="container">
-    <div class="rowarea">
+    <div class="rowarea" style="font-family: 'InfinitySans-RegularA1';">
       <div class="column_o" style="background-color:lightgray;">
       <div class="row">
-      	<h3 align="center">________ 님</h3>
+         <h3 align="center">________ 님</h3>
           <br>
           <h4 align="center">적립 0%</h4>
           <br>
@@ -319,7 +327,7 @@ li strong {
     
     <div class="container">
 
-<form action="/" method="post">
+<form id="updateForm" action="/Hankki/update.me" method="post">
 
 <div class="div0">
 <br>
@@ -329,8 +337,8 @@ li strong {
 
 <div class="div1">
    <div class="div2">
-      <label for="id" >아이디</label>
-      <input type="text" id="id">
+      <label for="id">아이디</label>
+      <h4> <%= m.getUserId() %> </h4>
       <div class="forgongbak"></div>
     </div>
 
@@ -342,7 +350,7 @@ li strong {
 
     <div class="div2">
         <label for="pwd2">새 비밀번호</label>
-        <input type="password" id="pwd2" placeholder="새로운 비밀번호를 입력해주세요">
+        <input type="password" id="pwd2" name="userPwd" placeholder="새로운 비밀번호를 입력해주세요">
         <div class="forgongbak"></div>
     </div>
       
@@ -355,27 +363,27 @@ li strong {
         
     <div class="div2">
         <label for="name">이름</label>
-        <input type="text" id="name">
+        <h4> <%= m.getUserName() %> </h4>
         <div class="forgongbak"></div>
     </div>
 
     <div class="div2">
         <label for="email">이메일</label>
          <div class="div2-1"></div>
-        <input type="text" id="email" placeholder="내용을 입력해주세요.">
+        <input type="text" id="email" name="userEmail" placeholder="내용을 입력해주세요.">
         <button type="submit" class="check1"> 중복확인</button>
     </div>
 
     <div class="div2">
         <label for="phone">휴대폰</label>
-        <input type="text" id="phone" placeholder="내용을 입력해주세요.">
+        <input type="text" id="phone" name="userPhone" placeholder="내용을 입력해주세요.">
         <div class="forgongbak"></div>
     </div>
     
     <div class="div2" style="flex-direction : column;"> 
         <div class="div2">
             <label for="address" class="div3-2" >주소</label>
-            <input type="text" id="sample6_address" placeholder="주소" >
+            <input type="text" id="sample6_address" name="address" placeholder="주소" >
             <input type="button" class="postsearch" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
         </div>        
         <input type="text" id="sample6_extraAddress" placeholder="참고항목"
@@ -388,36 +396,30 @@ li strong {
             function sample6_execDaumPostcode() {
                 new daum.Postcode({
                     oncomplete: function(data) {
-                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-        
-                        // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                        // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                        var addr = ''; // 주소 변수
-                        var extraAddr = ''; // 참고항목 변수
-        
-                        //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                        if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    
+                        var addr = ''; 
+                        var extraAddr = ''; 
+
+                        if (data.userSelectedType === 'R') { 
                             addr = data.roadAddress;
-                        } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        } else { 
                             addr = data.jibunAddress;
                         }
         
-                        // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
                         if(data.userSelectedType === 'R'){
-                            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+
                             if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
                                 extraAddr += data.bname;
                             }
-                            // 건물명이 있고, 공동주택일 경우 추가한다.
+         
                             if(data.buildingName !== '' && data.apartment === 'Y'){
                                 extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                             }
-                            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+  
                             if(extraAddr !== ''){
                                 extraAddr = ' (' + extraAddr + ')';
                             }
-                            // 조합된 참고항목을 해당 필드에 넣는다.
+                            
                             document.getElementById("sample6_extraAddress").value = extraAddr;
                         
                         } else {
@@ -425,16 +427,16 @@ li strong {
                         }
                         
                         document.getElementById("sample6_address").value = addr;
-                        // 커서를 상세주소 필드로 이동한다.
+                    
                         document.getElementById("sample6_detailAddress").focus();
                     }
                 }).open();
             }
         </script>                  
     </div>
-    <div class="div2">
+    <div class="div2" >
         <label for="birth">생년월일</label>
-        <input type="date" id="birth" style="text-align: center;">        
+        <input type="date" id="birth" name="userBirth" style="text-align: center;">        
         <div class="forgongbak"></div>
     </div>
     </div>
@@ -442,7 +444,7 @@ li strong {
 </div>
     <div class="div4" style="text-align: center;">
        <button type="submit" id="complete">수정 완료</button>
-       <button type="button" id="cancel">취소</button>
+       <button type="button" id="cancel" onclick="location.href='<%=request.getContextPath()%>/index.jsp'">취소</button>
     </div>
 </form>
 </div>

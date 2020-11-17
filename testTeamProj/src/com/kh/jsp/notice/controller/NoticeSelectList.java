@@ -16,7 +16,7 @@ import com.kh.jsp.notice.model.vo.Notice;
 /**
  * Servlet implementation class NoticeSelectList
  */
-@WebServlet("/NoticeSelectList")
+@WebServlet("/SelectList.no")
 public class NoticeSelectList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,7 +25,7 @@ public class NoticeSelectList extends HttpServlet {
      */
     public NoticeSelectList() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
 
 	/**
@@ -44,7 +44,7 @@ public class NoticeSelectList extends HttpServlet {
 			
 			request.setAttribute("list", list);
 			
-			page = "views/notice/noticeList/jsp";
+			page = "views/notice/noticeList.jsp";
 			
 		} catch (NoticeException e) {
 			

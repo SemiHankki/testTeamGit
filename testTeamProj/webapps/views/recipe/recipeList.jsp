@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*, com.kh.jsp.recipe.model.vo.*"%>	
+<% ArrayList<Recipe> list = (ArrayList<Recipe>) request.getAttribute("list"); %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,14 @@
 <title>레시피 목록 페이지</title>
 
 <style>
+
+ @font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 header {
 	height: 230px;
 }
@@ -89,7 +99,7 @@ header {
 
 .dropdown:hover .dropbtn {background-color: white;}
 
-#r_picture {border-radius: 8px;}
+#r_picture {border-radius: 8px; border: 1px solid black;}
 
 /* paging */
 #pagination {
@@ -125,7 +135,7 @@ header {
 	<br />
 	<!-- right-side fixed bar -->
 	<div class="col-xs-1 col-xs-offset-10 affix" id="aside">
-		<a href="#">
+		<a href="<%= request.getContextPath()%>/views/delivery/greenDelivery.jsp">
 			<img src="<%= request.getContextPath()%>/resources/images/grenn_delivery.png"/>
 		</a>
 
@@ -153,7 +163,7 @@ header {
 
 	<div class="container" id="recipe">
 
-	<div class="row">
+	<div class="row" style="font-family: 'InfinitySans-RegularA1';">
 		<div class="col-xs-12" id="header_text">
 			<h1>남김없이 한끼의 레시피</h1>
 		</div>
@@ -181,64 +191,39 @@ header {
 		<div class="col-xs-12" id="space_area">
 			<br />
 		</div>
-
-			<div class="col-xs-6">
+             <%
+				for (Recipe r : list) {
+			%>
+			<div class="col-xs-6" id= "r_thumbnail">
 				<a href="../recipeDetail.jsp" class="thumbnail" target="_blank">
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_11_.PNG" />
+				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/itemUploadFile/<%=r.getRb_attachment()%>" />
 				</a>
 				<div class="caption" style="text-align: center;">
-					<h3>치즈 조개구이</h3>
+					<h3><!-- 치즈 조개구이--><%=r.getRb_title()%></h3>
 					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/shellfish.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/cheese.png" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/itemUploadFile/<%=r.getRb_attachment()%>" width="30px" height="30px">
+					   <img id="s_button" src="<%=request.getContextPath()%>/resources/itemUploadFile/<%=r.getRb_attachment()%>" width="30px" height="30px">
 					</p>
 				</div>
 			</div>
-			<div class="col-xs-6">
-				<a href="#" class="thumbnail"> 
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_22.PNG" />
-				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>레몬향 연어덮밥</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/salmon1.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/lemon.png" width="30px" height="30px">
-					</p>
-				</div>
-			</div>
-
+			<%
+				}
+			%>
+         
 			<div class="col-xs-12" id="space_area">
 				<br />
 			</div>
-             <br>
-			<div class="col-xs-6">
-				<a href="#" class="thumbnail"> 
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_33_.png" />
-				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>호밤 쉐이크</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/milk.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/pumpkin.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/acorn.png" width="30px" height="30px">
-					</p>
-				</div>
-			</div>
-			<div class="col-xs-6">
-			    <a href="#" class="thumbnail"> 
-				  <img id="r_picture" src="<%=request.getContextPath()%>/resources/images/recipe_44.PNG" />
-				</a>
-				<div class="caption" style="text-align: center;">
-					<h3>어니언 치킨과 고구마칩</h3>
-					<p style="display: inline">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/chicken3.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/onion.png" width="30px" height="30px">
-					   <img id="s_button" src="<%=request.getContextPath()%>/resources/images/potato.png" width="30px" height="30px">
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+			
+			<script>
+				$('#r_tubmnail').css('height', '300px');
+				$('#r_tubmnail > a > img').css('height',
+						$('#r_tubmnail').css('height'));
+				$('#r_tubmnail > a > img').css('width',
+						$('#r_tubmnail').css('width'));
+			</script>
+	    </div>
+     </div> 
+           
 	<br />
 	<br />
 

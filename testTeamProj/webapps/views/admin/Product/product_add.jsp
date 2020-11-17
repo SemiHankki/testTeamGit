@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록 페이지</title>
+<style>
+.img-rounded {
+	cursor: pointer;
+}
+</style>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -66,43 +71,44 @@
 				$('.space_area').css('height', '20px');
 
 				$('#detail_explaine_title').css('margin-left', '30px');
-			});
+				
+	})
+
 </script>
 
 </head>
 <body>
 
-
 	<div class="container">
 		<div class="row">
-
 			<div class="col-xs-12" style="margin-left: 50px;">
 				<h1>상품 등록</h1>
 			</div>
 			<div class="col-xs-12">
 				<br /> <br />
 			</div>
-			<div class="col-xs-6" id="product_title_picture_area">
-
-				<img class="img-rounded" />
+			<form action="<%= request.getContextPath() %>/insert.pd"
+			  	method="post" enctype="multipart/form-data">
+			<div class="col-xs-6" id="product_title_picture_area">	
+				<img class="img-rounded" id="titleImg"/>
+					
 			</div>
 
 			<div class="col-xs-6" id="product_detail_explain">
-
+				
 				<div class="row">
 
 					<div class="col-xs-4">
 						<h3>카테고리</h3>
 					</div>
 					<div class="col-xs-8">
-						<select id="category_select">
-							<option value="select_veg" selected="selected">---선택---</option>
-							<option value="select_fruit">과일류</option>
-							<option value="select_vegetable">채소류</option>
-							<option value="select_meat">육류</option>
-							<option value="select_fish">해산물류</option>
-							<option value="select_easy_cook">간편식</option>
-							<option value="select_meal_kit">밀키트</option>
+						<select id="category_select" name="pType">
+							<option value="fruit" selected>과일류</option>
+							<option value="veg">채소류</option>
+							<option value="meat">육류</option>
+							<option value="seafood">해산물류</option>
+							<option value="covience">간편식</option>
+							<option value="mealkit">밀키트</option>
 						</select>
 
 					</div>
@@ -116,7 +122,7 @@
 						<h3>상품명</h3>
 					</div>
 					<div class="col-xs-8" id="product_name_text">
-						<input type="text" id="product_name" />
+						<input type="text" name="pName" placeholder="상품명을 입력해주세요."/>
 					</div>
 
 					<div class="col-xs-12">
@@ -128,7 +134,7 @@
 					</div>
 
 					<div class="col-xs-8">
-						<input type="text" id="product_price" />
+						<input type="text" name="pPrice" placeholder="상품가격을 입력해주세요."/>
 					</div>
 
 					<div class="col-xs-12">
@@ -140,7 +146,19 @@
 					</div>
 
 					<div class="col-xs-8">
-						<input type="text" id="product_amount" />
+						<input type="text" name="pAmount" placeholder="재고를 입력해주세요."/>
+					</div>
+
+					<div class="col-xs-12">
+						<hr />
+					</div>
+					
+					<div class="col-xs-4">
+						<h3>중량</h3>
+					</div>
+					
+					<div class="col-xs-8">
+						<input type="text" name="pWeight" placeholder="중량을 입력해주세요."/>
 					</div>
 
 					<div class="col-xs-12">
@@ -152,7 +170,7 @@
 					</div>
 
 					<div class="col-xs-8">
-						<input type="text" id="product_explain" />
+						<input type="text" name="pExplain" placeholder="상품 설명을 입력해주세요."/>
 					</div>
 				</div>
 			</div>
@@ -169,16 +187,16 @@
 			
 			<div class="space_area col-xs-12"></div>
 			
-			<div class="product_detail_picture col-xs-4">
-				<img class="img-rounded" />
+			<div class="product_detail_picture col-xs-4" id="prudouctImgArea1">
+				<img class="img-rounded" id="productImg1" />
 			</div>
-			<div class="product_detail_picture col-xs-4">
-				<img class="img-rounded" />
+			<div class="product_detail_picture col-xs-4" id="prudouctImgArea2">
+				<img class="img-rounded" id="productImg2" />
 			</div>
-			<div class="product_detail_picture col-xs-4">
-				<img class="img-rounded" />
+			<div class="product_detail_picture col-xs-4" id="prudouctImgArea3">
+				<img class="img-rounded" id="productImg3" />
 			</div>
-
+						
 			<div class="space_area col-xs-12"></div>
 
 			<div class="col-xs-12">
@@ -189,18 +207,73 @@
 			
 			<div class="col-xs-12" id="button_area">
 				<div class="col-xs-2 col-xs-offset-3">
-				<button class="btn btn-success btn-lg">등록</button>
+				<button type="submit" class="btn btn-success btn-lg">등록</button>
 				</div>
 				<div class="col-xs-2"><br /></div>
 				<div class="col-xs-2">
-				<button class="btn btn-danger btn-lg">취소</button>
+				<button type="reset" onclick="goBack()" class="btn btn-danger btn-lg">취소</button>
 				</div>
 			</div>
-			
-			<div class="col-xs-12" id="space_area"><br><br></div>
+			<div class="col-xs-12" id="space_area"><br><br></div>	
+			<div class="fileArea" id="fileArea">
+				<input type="file" name="pImg1" id="pImg1" onchange="loadImg(this,1);" />
+				<input type="file" name="pImg2" id="pImg2" onchange="loadImg(this,2);" />
+				<input type="file" name="pImg3" id="pImg3" onchange="loadImg(this,3);" />
+				<input type="file" name="pImg4" id="pImg4" onchange="loadImg(this,4);" />
+			</div>
+			</form>		
 		</div>		
 	</div>
 	
+	<script>
+	$(function(){
+		$('#product_title_picture_area').click(function(){
+			$('#pImg1').click();
+		});
+		
+		$('#prudouctImgArea1').click(function(){
+			$('#pImg2').click();
+		});
+		
+		$('#prudouctImgArea2').click(function(){
+			$('#pImg3').click();
+		});
+		
+		$('#prudouctImgArea3').click(function(){
+			$('#pImg4').click();
+		});
+		
+		$('#fileArea').hide();
+	
+	})
+	
+	function loadImg(img, num){
+		if(img.files && img.files[0]) {
+			
+			var reader = new FileReader();
+			
+			reader.onload = function(e){
+				
+				switch(num){
+				case 1 : $('#titleImg').attr('src', e.target.result);
+						 break;
+				case 2 : $('#productImg1').attr('src', e.target.result);
+						 break;
+				case 3 : $('#productImg2').attr('src', e.target.result);
+						 break;
+				case 4 : $('#productImg3').attr('src', e.target.result);
+						 break;
+				}
+			}
+			
+			reader.readAsDataURL(img.files[0]);
+		}
+		
+		function goBack() {
+			history.back();
+		}
+	}
+	</script>
 	
 </body>
 </html>

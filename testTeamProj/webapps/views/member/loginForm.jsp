@@ -74,7 +74,7 @@ color : white;
     </header>  
       
       <div class="container">
-       <div class="row">
+       <div class="row" style="font-family: 'InfinitySans-RegularA1';">
        <div class="col-md-12">
         <div class="col-md-3"></div>
          <div class="col-md-6" style= "margin-top: 20px;">
@@ -82,14 +82,15 @@ color : white;
            <div style="text-align: center;">
              <h2>로그인 </h2><br>
            </div>
+           <form action="<%= request.getContextPath() %>/login.me" method="post">
              <div class="div1">
                 <label for="id">아이디</label>
-                <input type="text" id="id" placeholder="아이디를 입력해주세요"/> 
+                <input type="text" id="id" name="id" placeholder="아이디를 입력해주세요"/> 
              </div>
              <br>   
              <div class="div1"> 
                 <label for="pw">비밀번호</label>
-                <input type="password" id="pw" placeholder="비밀번호를 입력해주세요"/>
+                <input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요"/>
              </div>
              <br><br>
              <div class="find">
@@ -102,8 +103,10 @@ color : white;
              </div>
              <br>
              <div class="div2">
-                <button type="submit" class="join">회원가입</button>
+                <button type="button" onclick="location.href='<%=request.getContextPath()%>/views/member/signUp.jsp'"
+                class="join">회원가입</button>
              </div>
+           </form>
              <br><br><br>
            </div>
           </div>
